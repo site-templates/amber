@@ -1,0 +1,74 @@
+[
+    {
+        "order": 1,
+        "title": "Harbor",
+        "description": "Positioning, brand, and a conversion-focused site for a customer-support platform moving upmarket.",
+        "service": "Brand & web",
+        "year": "2026",
+        "link": "#",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
+        "alt": "Laptop on a desk showing analytics dashboards for the Harbor marketing site",
+        "color_from": "#c2714f",
+        "color_to": "#7c3f21"
+    },
+    {
+        "order": 2,
+        "title": "Quill & Co.",
+        "description": "Editorial identity and web design for a newsletter studio publishing to two million readers.",
+        "service": "Identity",
+        "year": "2026",
+        "link": "#",
+        "image": "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1600&auto=format&fit=crop",
+        "alt": "Fountain pen writing on paper — the editorial world of Quill & Co.",
+        "color_from": "#5f6c50",
+        "color_to": "#2c3323"
+    },
+    {
+        "order": 3,
+        "title": "Meadowbank",
+        "description": "Product design for a savings app that makes compound interest feel like a garden growing.",
+        "service": "Product design",
+        "year": "2025",
+        "link": "#",
+        "image": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=1600&auto=format&fit=crop",
+        "alt": "A seedling growing from a jar of coins — Meadowbank's savings-as-a-garden idea",
+        "color_from": "#9a7b4f",
+        "color_to": "#4a3722"
+    },
+    {
+        "order": 4,
+        "title": "Copperline",
+        "description": "Design subscription for a dev-tools startup — landing pages, docs design, and a full component library.",
+        "service": "Subscription",
+        "year": "2025",
+        "link": "#",
+        "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop",
+        "alt": "Code editor open on a laptop — Copperline's developer-tools product",
+        "color_from": "#8c5a5a",
+        "color_to": "#3f2323"
+    },
+    {
+        "order": 5,
+        "title": "Solstice Sauna",
+        "description": "Brand and booking site for a floating sauna on the Oslo fjord. Warm design for cold water.",
+        "service": "Brand & web",
+        "year": "2024",
+        "link": "#",
+        "image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1600&auto=format&fit=crop",
+        "alt": "A lakeside cabin at dusk in Nordic light — the world of Solstice Sauna",
+        "color_from": "#4f6c7c",
+        "color_to": "#22333d"
+    },
+    {
+        "order": 6,
+        "title": "Paper Trail",
+        "description": "A receipts-to-taxes app for freelancers. Design from onboarding to the year-end export moment.",
+        "service": "Product design",
+        "year": "2024",
+        "link": "#",
+        "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1600&auto=format&fit=crop",
+        "alt": "Receipts and a calculator on a desk — Paper Trail's tax-season territory",
+        "color_from": "#7a748c",
+        "color_to": "#37323f"
+    }
+]

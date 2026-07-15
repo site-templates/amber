@@ -1,0 +1,30 @@
+[
+    {
+        "order": 1,
+        "years": "2021 — now",
+        "role": "Founder & design partner",
+        "company": "Calloway Studio",
+        "note": "A one-person studio for founders — brand, product, and web, on subscription or by project."
+    },
+    {
+        "order": 2,
+        "years": "2018 — 2021",
+        "role": "Design lead",
+        "company": "Northlight",
+        "note": "Led a team of five designing fintech products for challenger banks across Europe."
+    },
+    {
+        "order": 3,
+        "years": "2015 — 2018",
+        "role": "Product designer",
+        "company": "Bright & Early",
+        "note": "First design hire. Took two products from beta to acquisition."
+    },
+    {
+        "order": 4,
+        "years": "2013 — 2015",
+        "role": "Visual designer",
+        "company": "Freelance",
+        "note": "Logos, posters, and websites for anyone who would have me. Learned by shipping."
+    }
+]

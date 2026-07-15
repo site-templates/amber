@@ -1,0 +1,27 @@
+[
+    {
+        "order": 1,
+        "question": "How does the design subscription work?",
+        "answer": "One flat monthly rate, one active request at a time. You add requests to a shared board, I work through them top to bottom, and most land back with you within two business days. Pause or cancel whenever you like — unused days roll over."
+    },
+    {
+        "order": 2,
+        "question": "What if I just have one project?",
+        "answer": "Single projects are welcome. After a short call I'll send a fixed quote with a timeline — most brand-and-site projects run four to six weeks."
+    },
+    {
+        "order": 3,
+        "question": "How quickly will I see designs?",
+        "answer": "You'll see the first real design direction within the first week, not a mood board. From there we iterate in small, frequent rounds rather than big reveals."
+    },
+    {
+        "order": 4,
+        "question": "Who owns the work?",
+        "answer": "You do — all source files, all rights, transferred as soon as the invoice clears. Your brand shouldn't live in someone else's Figma account."
+    },
+    {
+        "order": 5,
+        "question": "What don't you do?",
+        "answer": "Full-scale illustration systems, 3D, and native mobile development. When a project needs them I bring in trusted specialists and stay accountable for the result."
+    }
+]

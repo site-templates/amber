@@ -1,0 +1,44 @@
+[
+    {
+        "order": 1,
+        "quote": "June took a product we could barely explain and gave it a story, a face, and a website that closes deals for us.",
+        "name": "Tomás Rivera",
+        "role": "CEO, Harbor",
+        "featured": true
+    },
+    {
+        "order": 2,
+        "quote": "The subscription model is a cheat code. It's like having a design co-founder without giving up equity.",
+        "name": "Amara Osei",
+        "role": "Founder, Copperline",
+        "featured": false
+    },
+    {
+        "order": 3,
+        "quote": "Fastest turnaround we've ever had from a designer, and somehow also the most considered.",
+        "name": "Lena Bakke",
+        "role": "CPO, Meadowbank",
+        "featured": false
+    },
+    {
+        "order": 4,
+        "quote": "Our conversion rate doubled within a month of the new site going live. The numbers speak for themselves.",
+        "name": "Henrik Falk",
+        "role": "Founder, Solstice Sauna",
+        "featured": false
+    },
+    {
+        "order": 5,
+        "quote": "Working with June feels less like hiring a freelancer and more like borrowing someone's taste for a quarter.",
+        "name": "Ruth Ellison",
+        "role": "Editor, Quill & Co.",
+        "featured": false
+    },
+    {
+        "order": 6,
+        "quote": "Every deliverable arrived ready to ship. No 'final_final_v3' folders, no loose ends, no drama.",
+        "name": "Daniel Werner",
+        "role": "CTO, Paper Trail",
+        "featured": false
+    }
+]
