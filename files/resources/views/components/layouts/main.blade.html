@@ -11,7 +11,9 @@
     <meta property="og:title" content="{{ $title }} — Amber">
     <meta property="og:description" content="{{ $description }}">
     <meta property="og:type" content="website">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M8 2h8l-8 20H0L8 2Z' fill='%23e05d38'/><path d='M18 10h8l-8 20h-8l8-20Z' fill='%23e05d38'/></svg>">
+    <!-- The "a" mark. The SVG adapts to dark browser chrome; the PNG covers browsers that can't take an SVG icon. -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="/favicon.png" type="image/png" sizes="96x96">
 
     <!--
         Tells the CSS that JavaScript is running, before anything paints, so the
@@ -41,6 +43,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
     <script src="/js/main.js"></script>
+    <!-- The homepage hero's living color mesh — a no-op on pages without [data-hero-shader] -->
+    <script src="/js/hero-shader.js"></script>
 
 </body>
 </html>

@@ -6,7 +6,19 @@
         The vertical rhythm here is tuned so the image below starts before the fold
         on a laptop — keep an eye on it if you add anything above the headline.
     --}}
-    <section class="pt-10 pb-20 sm:pt-14">
+    {{--
+        The negative top margin tucks the section under the transparent sticky
+        header (64px tall), so the backdrop runs to the very top of the page;
+        the top padding puts the content back where it was.
+    --}}
+    <section class="relative -mt-16 pt-26 pb-20 sm:pt-30">
+        {{--
+            The hero's backdrop — golden silk pooled in the top-right corner.
+            The artwork's cream matches the canvas color, and the hero-aurora
+            mask fades its left and bottom edges, so it melts into the page
+            instead of ending on a seam.
+        --}}
+
         <div class="mx-auto max-w-6xl px-6">
             <div class="flex flex-col items-center text-center">
                 {{-- Star rating. One label for the whole row, so it isn't read out five times. --}}
@@ -43,8 +55,12 @@
                 </div>
             </div>
 
-            {{-- The showpiece. The dot grid is the template's signature — see dot-grid in site.css. --}}
-            <div class="relative mt-12 aspect-4/3 overflow-hidden rounded-[min(2vw,24px)] outline-1 -outline-offset-1 outline-black/5 [--reveal-delay:200ms] sm:aspect-16/7" data-reveal>
+            {{--
+                The showpiece. The dot grid is the template's signature — see dot-grid in site.css.
+                data-hero-shader lays a living color mesh over the still (public/js/hero-shader.js);
+                the image underneath is the real fallback, so never remove it.
+            --}}
+            <div class="relative mt-12 aspect-4/3 overflow-hidden rounded-[min(2vw,24px)] outline-1 -outline-offset-1 outline-black/5 [--reveal-delay:200ms] sm:aspect-16/7" data-reveal data-hero-shader>
                 <img src="https://assets.ui.sh/wallpapers/silk.webp?variant=molten-amber" alt="" class="size-full object-cover">
                 <div class="dot-grid absolute inset-4" aria-hidden="true"></div>
             </div>

@@ -4,10 +4,13 @@
     flex-1 gutters either side are what hold it in the true middle.
 --}}
 {{--
-    The header is flush with the page until you scroll, then eases in its hairline
-    and shadow — public/js/main.js sets data-scrolled past the first few pixels.
+    The header is fully transparent at the top of the page — the homepage's
+    aurora backdrop runs to the very top edge behind it. Scrolling eases in the
+    frosted veil, hairline, and shadow — public/js/main.js sets data-scrolled
+    past the first few pixels. The veil also returns while the mobile menu is
+    open, so the links never float over the artwork.
 --}}
-<header id="header" class="bg-canvas/80 sticky top-0 z-50 backdrop-blur-md transition-shadow duration-300 ease-out data-scrolled:shadow-header">
+<header id="header" class="sticky top-0 z-50 transition-[background-color,box-shadow] duration-300 ease-out data-scrolled:bg-canvas/80 data-scrolled:backdrop-blur-md data-scrolled:shadow-header has-open:bg-canvas/80 has-open:backdrop-blur-md">
     <nav class="relative mx-auto flex max-w-6xl items-center gap-4 px-6 py-3.5">
 
         <div class="flex flex-1 items-center">

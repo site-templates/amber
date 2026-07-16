@@ -83,6 +83,25 @@ summary:focus-visible {
 }
 
 /*
+    The hero mesh shader (public/js/hero-shader.js) creates a canvas inside
+    [data-hero-shader], over the still image and under the dot grid. It stays
+    invisible until the first frame has rendered, then fades in — so a failed
+    or slow start is indistinguishable from the plain design.
+*/
+[data-hero-shader] > canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.2s var(--ease-out-soft);
+}
+
+[data-hero-shader] > canvas.is-running {
+    opacity: 1;
+}
+
+/*
     Animated underline for text links. Grows from the left on hover, so it
     reads as motion rather than a color swap.
 */
