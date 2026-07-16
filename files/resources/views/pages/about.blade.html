@@ -1,83 +1,124 @@
-<!-- About — served at "/about". -->
-<x-layouts.main title="About" description="June Calloway — twelve years of design for founders, from first sketch to launch day.">
+{{-- About — served at "/about". --}}
+<x-layouts.main title="About" description="Amber is a four-person design studio in Copenhagen — thirteen years of design for founders, from first sketch to launch day.">
 
-    <section class="mx-auto max-w-5xl px-6 pt-20 pb-16 sm:pt-28">
-        <div class="grid gap-12 lg:grid-cols-5 lg:gap-16">
-            <div class="lg:col-span-3">
-                <p class="fade-up eyebrow">About</p>
-                <h1 class="fade-up font-serif-display mt-4 text-balance text-4xl leading-[1.05] tracking-tight sm:text-5xl" style="animation-delay: .05s">
-                    Design is a <em class="text-[#e05d38]">craft</em>. I treat it like one.
-                </h1>
-                <div class="fade-up mt-8 flex flex-col gap-5 text-base leading-relaxed text-stone-600" style="animation-delay: .1s">
-                    <p>
-                        I've spent twelve years designing for startups — first inside
-                        them, now alongside them. In that time I've learned that great
-                        design isn't about taste alone; it's about momentum. Founders
-                        don't need a hundred options, they need the right one, shipped.
-                    </p>
-                    <p>
-                        Calloway Studio is deliberately small. No account managers, no
-                        hand-offs, no telephone game. You talk to the person doing the
-                        work, and the work moves fast because of it.
-                    </p>
-                    <p>
-                        When I'm not designing, I'm restoring a 1970s sailboat and
-                        writing an occasional letter about design and independence.
-                    </p>
+    {{-- ============ Header ============ --}}
+    <section class="pt-16 pb-16 sm:pt-24">
+        <div class="mx-auto max-w-6xl px-6">
+            <div class="grid gap-6 lg:grid-cols-12">
+                <div class="lg:col-span-7">
+                    <p class="bg-ink/5 text-ink/70 inline-flex rounded-full px-3 py-1 text-sm sm:text-xs">About</p>
+                    <h1 class="font-display mt-6 max-w-[20ch] text-6xl tracking-tight text-balance [--reveal-delay:50ms] sm:text-7xl" data-reveal>
+                        Design is a craft. We treat it like one.
+                    </h1>
                 </div>
-            </div>
-
-            <!-- Portrait — swap the Unsplash photo for your own; the tint keeps it on-palette. -->
-            <div class="fade-up lg:col-span-2" style="animation-delay: .1s">
-                <div class="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1600&auto=format&fit=crop" alt="June Calloway at her studio desk" class="absolute inset-0 h-full w-full object-cover">
-                    <span class="absolute inset-0 mix-blend-multiply opacity-25" style="background: linear-gradient(160deg, #c2714f, #7c3f21)"></span>
+                <div class="lg:col-span-5 lg:pt-20 [--reveal-delay:100ms]" data-reveal>
+                    <div class="text-ink/60 flex flex-col gap-5 text-base/7 text-pretty">
+                        <p>
+                            We've spent thirteen years designing for startups — first inside
+                            them, now alongside them. In that time we've learned that great
+                            design isn't about taste alone; it's about momentum. Founders
+                            don't need a hundred options, they need the right one, shipped.
+                        </p>
+                        <p>
+                            Amber is deliberately small. Four people, no account managers, no
+                            hand-offs, no telephone game. You talk to the people doing the
+                            work, and the work moves fast because of it.
+                        </p>
+                    </div>
                 </div>
-                <p class="mt-4 text-center text-xs text-stone-400">June, probably rearranging a grid somewhere.</p>
             </div>
         </div>
     </section>
 
-    <!-- ============ Career timeline ============ -->
-    <!-- Loops over collections/timeline.json — edit that file to tell your own story. -->
-    <section class="border-t border-[#1c1917]/5 bg-white/60">
-        <div class="mx-auto max-w-5xl px-6 py-20">
-            <h2 class="eyebrow">The road here</h2>
+    {{-- ============ Team ============ --}}
+    {{-- Loops over collections/team.json. --}}
+    <section class="bg-surface border-ink/5 border-y py-20 sm:py-28">
+        <div class="mx-auto max-w-6xl px-6">
+            <div class="grid gap-6 lg:grid-cols-12">
+                <div class="lg:col-span-7">
+                    <p class="bg-ink/5 text-ink/70 inline-flex rounded-full px-3 py-1 text-sm sm:text-xs">The team</p>
+                    <h2 class="font-display mt-6 max-w-[24ch] text-5xl tracking-tight text-balance sm:text-6xl">
+                        You're in <span class="text-ink/35">experienced</span> hands.
+                    </h2>
+                </div>
+                <div class="lg:col-span-5 lg:pt-16">
+                    <p class="text-ink/60 max-w-[56ch] text-base/7 text-pretty">
+                        No layers of management. You work directly with the four specialists
+                        who understand your business and build the thing from start to finish.
+                    </p>
+                </div>
+            </div>
 
-            <div class="mt-10">
-                @foreach ($timeline as $stop)
-                    <div class="grid gap-2 border-t border-[#1c1917]/10 py-7 sm:grid-cols-12 sm:items-baseline">
-                        <span class="text-xs tabular-nums text-stone-400 sm:col-span-2">{{ $stop->years }}</span>
-                        <div class="sm:col-span-4">
-                            <h3 class="font-semibold">{{ $stop->role }}</h3>
-                            <p class="font-serif-display text-lg text-[#e05d38]">{{ $stop->company }}</p>
+            <ul role="list" class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                @foreach ($team as $member)
+                    <li>
+                        <div class="relative flex aspect-4/5 items-end overflow-hidden rounded-[min(2vw,24px)] p-5 outline-1 -outline-offset-1 outline-black/5">
+                            <img src="{{ $member->image }}" alt="" class="absolute inset-0 size-full object-cover" loading="lazy">
+                            <span class="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-black/60 to-transparent" aria-hidden="true"></span>
+                            <div class="relative min-w-0">
+                                <p class="truncate text-base text-white sm:text-sm">{{ $member->name }}</p>
+                                <p class="truncate text-base text-white/60 sm:text-sm">{{ $member->role }}</p>
+                            </div>
                         </div>
-                        <p class="text-sm leading-relaxed text-stone-500 sm:col-span-6">{{ $stop->note }}</p>
+                        <p class="text-ink/50 mt-4 text-base/7 text-pretty sm:text-sm/6">{{ $member->note }}</p>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+    </section>
+
+    {{-- ============ Studio timeline ============ --}}
+    {{-- Loops over collections/timeline.json — edit that file to tell your own story. --}}
+    <section class="py-20 sm:py-28">
+        <div class="mx-auto max-w-6xl px-6">
+            <p class="bg-ink/5 text-ink/70 inline-flex rounded-full px-3 py-1 text-sm sm:text-xs">The road here</p>
+            <h2 class="font-display mt-6 max-w-[24ch] text-5xl tracking-tight text-balance sm:text-6xl">
+                Thirteen years, one <span class="text-ink/35">habit</span>: ship it.
+            </h2>
+
+            <div class="border-ink/10 mt-12 border-t">
+                @foreach ($timeline as $stop)
+                    <div class="border-ink/10 grid gap-x-6 gap-y-2 border-b py-8 sm:grid-cols-12 sm:items-baseline">
+                        <p class="text-accent font-display text-4xl tabular-nums sm:col-span-2">{{ $stop->years }}</p>
+                        <h3 class="text-base font-medium sm:col-span-4 sm:text-sm">{{ $stop->title }}</h3>
+                        <p class="text-ink/50 text-base/7 text-pretty sm:col-span-6 sm:text-sm/6">{{ $stop->note }}</p>
                     </div>
                 @endforeach
             </div>
         </div>
     </section>
 
-    <!-- ============ Principles ============ -->
-    <section class="mx-auto max-w-5xl px-6 py-20">
-        <h2 class="eyebrow">Three principles</h2>
-        <div class="mt-10 grid gap-6 sm:grid-cols-3">
-            <div class="rounded-2xl border border-[#1c1917]/5 bg-white p-7 shadow-sm">
-                <p class="font-serif-display text-4xl text-[#e05d38]">01</p>
-                <h3 class="mt-4 font-semibold">Momentum over perfection</h3>
-                <p class="mt-2 text-sm leading-relaxed text-stone-500">A shipped eight is worth more than a stalled ten. We iterate in public, on the real thing.</p>
-            </div>
-            <div class="rounded-2xl border border-[#1c1917]/5 bg-white p-7 shadow-sm">
-                <p class="font-serif-display text-4xl text-[#e05d38]">02</p>
-                <h3 class="mt-4 font-semibold">Words are design</h3>
-                <p class="mt-2 text-sm leading-relaxed text-stone-500">Half of every interface is writing. I design the sentence and the screen together.</p>
-            </div>
-            <div class="rounded-2xl border border-[#1c1917]/5 bg-white p-7 shadow-sm">
-                <p class="font-serif-display text-4xl text-[#e05d38]">03</p>
-                <h3 class="mt-4 font-semibold">Own your work</h3>
-                <p class="mt-2 text-sm leading-relaxed text-stone-500">Everything I make is yours — files, fonts, and the reasoning behind them, documented.</p>
-            </div>
+    {{-- ============ Principles ============ --}}
+    <section class="bg-surface border-ink/5 border-t py-20 sm:py-28">
+        <div class="mx-auto max-w-6xl px-6">
+            <p class="bg-ink/5 text-ink/70 inline-flex rounded-full px-3 py-1 text-sm sm:text-xs">How we think</p>
+            <h2 class="font-display mt-6 max-w-[24ch] text-5xl tracking-tight text-balance sm:text-6xl">
+                Three things we <span class="text-ink/35">won't</span> compromise.
+            </h2>
+
+            <dl class="mt-12 grid gap-6 sm:grid-cols-3">
+                <div class="border-ink/10 rounded-3xl border p-7">
+                    <dt>
+                        <p class="font-display text-accent text-5xl tabular-nums">01</p>
+                        <p class="mt-5 text-base font-medium sm:text-sm">Momentum over perfection</p>
+                    </dt>
+                    <dd class="text-ink/50 mt-2 text-base/7 text-pretty sm:text-sm/6">A shipped eight is worth more than a stalled ten. We iterate in public, on the real thing.</dd>
+                </div>
+                <div class="border-ink/10 rounded-3xl border p-7">
+                    <dt>
+                        <p class="font-display text-accent text-5xl tabular-nums">02</p>
+                        <p class="mt-5 text-base font-medium sm:text-sm">Words are design</p>
+                    </dt>
+                    <dd class="text-ink/50 mt-2 text-base/7 text-pretty sm:text-sm/6">Half of every interface is writing. We design the sentence and the screen together.</dd>
+                </div>
+                <div class="border-ink/10 rounded-3xl border p-7">
+                    <dt>
+                        <p class="font-display text-accent text-5xl tabular-nums">03</p>
+                        <p class="mt-5 text-base font-medium sm:text-sm">You own your work</p>
+                    </dt>
+                    <dd class="text-ink/50 mt-2 text-base/7 text-pretty sm:text-sm/6">Everything we make is yours — files, fonts, and the reasoning behind them, documented.</dd>
+                </div>
+            </dl>
         </div>
     </section>
 

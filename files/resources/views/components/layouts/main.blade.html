@@ -1,4 +1,4 @@
-@props(['title' => 'Calloway Studio', 'description' => ''])
+@props(['title' => 'Amber', 'description' => ''])
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,29 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- The title below is set per page via the layout component's title attribute -->
-    <title>{{ $title }} — Calloway Studio</title>
+    <title>{{ $title }} — Amber</title>
     <meta name="description" content="{{ $description }}">
-    <meta property="og:title" content="{{ $title }} — Calloway Studio">
+    <meta property="og:title" content="{{ $title }} — Amber">
     <meta property="og:description" content="{{ $description }}">
     <meta property="og:type" content="website">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='26' fill='%23e05d38'/></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M8 2h8l-8 20H0L8 2Z' fill='%23e05d38'/><path d='M18 10h8l-8 20h-8l8-20Z' fill='%23e05d38'/></svg>">
+
+    <!--
+        Tells the CSS that JavaScript is running, before anything paints, so the
+        scroll-reveal start state never hides content from a visitor without JS.
+    -->
+    <script>document.documentElement.classList.add('js')</script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Halant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lenis powers the weighted, eased scrolling — see public/js/main.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.css">
 
     <!-- The line below loads Tailwind and inlines your resources/css/site.css -->
     @vite('resources/css/site.css')
 </head>
-<body class="flex min-h-screen flex-col bg-[#f7f5f0] text-[#1c1917] antialiased">
+<body class="bg-canvas text-ink flex min-h-dvh flex-col font-sans antialiased">
 
     <x-nav/>
 
-    <main class="flex-1">
+    <main class="isolate flex-1">
         {{ $slot }}
     </main>
 
     <x-footer/>
+
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="/js/main.js"></script>
 
 </body>
 </html>

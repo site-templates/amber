@@ -1,0 +1,30 @@
+[
+    {
+        "order": 1,
+        "name": "June Calloway",
+        "role": "Founder & design partner",
+        "note": "Thirteen years designing for founders. Runs discovery and art direction.",
+        "image": "https://assets.ui.sh/avatars/1.webp?w=800&h=1000"
+    },
+    {
+        "order": 2,
+        "name": "Marlow Chen",
+        "role": "Brand designer",
+        "note": "Identity, type, and the systems that keep a brand from drifting.",
+        "image": "https://assets.ui.sh/avatars/7.webp?w=800&h=1000"
+    },
+    {
+        "order": 3,
+        "name": "Ari Nakamura",
+        "role": "Product designer",
+        "note": "Onboarding, funnels, and the unglamorous screens that decide it.",
+        "image": "https://assets.ui.sh/avatars/10.webp?w=800&h=1000"
+    },
+    {
+        "order": 4,
+        "name": "Frankie Solberg",
+        "role": "Design engineer",
+        "note": "Turns the file into the site. Tailwind, motion, and performance.",
+        "image": "https://assets.ui.sh/avatars/13.webp?w=800&h=1000"
+    }
+]

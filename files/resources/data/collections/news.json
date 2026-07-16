@@ -1,0 +1,38 @@
+[
+    {
+        "order": 1,
+        "title": "Five Signs Your Brand Is Holding You Back",
+        "description": "Is your own website the reason the deal stalled? Five symptoms we see in every founder call — and what each one is really telling you.",
+        "category": "Brand",
+        "date": "2026-06-18",
+        "dateFormatted": "Jun 18, 2026",
+        "readTime": "5 min read",
+        "link": "/news/signs-your-brand-is-holding-you-back",
+        "image": "https://assets.ui.sh/wallpapers/landscapes.webp?variant=dunes",
+        "alt": ""
+    },
+    {
+        "order": 2,
+        "title": "Why We Design in Figma and Finish in Tailwind",
+        "description": "The handoff meeting is a negotiation nobody wins. Here's how we deleted it — and what changed for the engineers on the other side.",
+        "category": "Process",
+        "date": "2026-05-27",
+        "dateFormatted": "May 27, 2026",
+        "readTime": "6 min read",
+        "link": "/news/figma-to-tailwind",
+        "image": "https://assets.ui.sh/wallpapers/landscapes.webp?variant=hills",
+        "alt": ""
+    },
+    {
+        "order": 3,
+        "title": "The Six-Week Brand, and Why It Works",
+        "description": "Long engagements don't make better brands, they make tired ones. What a six-week sprint forces you to decide — and why that's the point.",
+        "category": "Studio",
+        "date": "2026-05-04",
+        "dateFormatted": "May 4, 2026",
+        "readTime": "4 min read",
+        "link": "/news/the-six-week-brand",
+        "image": "https://assets.ui.sh/wallpapers/landscapes.webp?variant=meadow",
+        "alt": ""
+    }
+]

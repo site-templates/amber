@@ -1,44 +1,50 @@
 [
     {
         "order": 1,
-        "quote": "June took a product we could barely explain and gave it a story, a face, and a website that closes deals for us.",
-        "name": "Tomás Rivera",
+        "quote": "Amber took a product we could barely explain and gave it a story, a face, and a website that closes deals for us.",
+        "name": "Rowan Reyes",
         "role": "CEO, Harbor",
+        "avatar": "https://assets.ui.sh/avatars/2.webp?size=160",
         "featured": true
     },
     {
         "order": 2,
-        "quote": "The subscription model is a cheat code. It's like having a design co-founder without giving up equity.",
-        "name": "Amara Osei",
+        "quote": "The retainer is a cheat code. It's like having a design co-founder without giving up equity.",
+        "name": "Avery Osei",
         "role": "Founder, Copperline",
+        "avatar": "https://assets.ui.sh/avatars/5.webp?size=160",
         "featured": false
     },
     {
         "order": 3,
-        "quote": "Fastest turnaround we've ever had from a designer, and somehow also the most considered.",
-        "name": "Lena Bakke",
+        "quote": "Fastest turnaround we've ever had from a design team, and somehow also the most considered.",
+        "name": "Sasha Bakke",
         "role": "CPO, Meadowbank",
+        "avatar": "https://assets.ui.sh/avatars/8.webp?size=160",
         "featured": false
     },
     {
         "order": 4,
         "quote": "Our conversion rate doubled within a month of the new site going live. The numbers speak for themselves.",
-        "name": "Henrik Falk",
+        "name": "Kai Falk",
         "role": "Founder, Solstice Sauna",
+        "avatar": "https://assets.ui.sh/avatars/11.webp?size=160",
         "featured": false
     },
     {
         "order": 5,
-        "quote": "Working with June feels less like hiring a freelancer and more like borrowing someone's taste for a quarter.",
-        "name": "Ruth Ellison",
+        "quote": "Working with Amber feels less like hiring an agency and more like borrowing someone's taste for a quarter.",
+        "name": "Quinn Ellison",
         "role": "Editor, Quill & Co.",
+        "avatar": "https://assets.ui.sh/avatars/14.webp?size=160",
         "featured": false
     },
     {
         "order": 6,
         "quote": "Every deliverable arrived ready to ship. No 'final_final_v3' folders, no loose ends, no drama.",
-        "name": "Daniel Werner",
+        "name": "Devon Werner",
         "role": "CTO, Paper Trail",
+        "avatar": "https://assets.ui.sh/avatars/16.webp?size=160",
         "featured": false
     }
 ]

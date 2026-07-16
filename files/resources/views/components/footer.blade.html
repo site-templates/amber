@@ -1,19 +1,70 @@
-<!-- Global footer with the closing CTA. Rendered on every page by the layout. -->
-<footer class="border-t border-[#1c1917]/5 bg-[#1c1917] text-[#f7f5f0]">
-    <div class="mx-auto max-w-5xl px-6 py-20">
-        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">Start a project</p>
-        <a href="mailto:june@example.com" class="font-serif-display mt-4 block max-w-2xl text-balance text-4xl leading-[1.1] tracking-tight transition hover:text-[#e05d38] sm:text-6xl">
-            Your product deserves <em>better design</em>. Let's talk.
-        </a>
+{{-- Global footer with the closing CTA. Rendered on every page by the layout. --}}
+<footer class="bg-ink text-canvas">
 
-        <div class="mt-16 flex flex-col gap-6 border-t border-white/10 pt-8 text-sm text-stone-400 sm:flex-row sm:items-center sm:justify-between">
-            <p>&copy; 2026 Calloway Studio. All rights reserved.</p>
-            <div class="flex items-center gap-6">
-                <a href="#" class="hover-line transition hover:text-white">X / Twitter</a>
-                <a href="#" class="hover-line transition hover:text-white">LinkedIn</a>
-                <a href="#" class="hover-line transition hover:text-white">Read.cv</a>
-                <a href="mailto:june@example.com" class="hover-line transition hover:text-white">june@example.com</a>
-            </div>
+    {{-- The closing CTA, over the last of the site's art-directed images --}}
+    <div class="relative isolate overflow-hidden">
+        <img src="https://assets.ui.sh/wallpapers/horizon.webp?variant=obsidian-ember" alt="" class="absolute inset-0 -z-10 size-full object-cover" loading="lazy">
+        <div class="from-ink via-ink/60 to-ink/75 absolute inset-0 -z-10 bg-linear-to-t" aria-hidden="true"></div>
+
+        <div class="mx-auto max-w-6xl px-6 py-24 sm:py-32">
+            <p class="bg-canvas/10 text-canvas/70 inline-flex rounded-full px-3 py-1 text-sm sm:text-xs">Start a project</p>
+            <a href="mailto:studio@amber.example" class="hover:text-accent font-display mt-6 block max-w-[20ch] text-5xl tracking-tight text-balance sm:text-7xl">
+                Your launch deserves <span class="text-canvas/50">better design</span>.
+            </a>
+            <p class="text-canvas/60 mt-8 max-w-[56ch] text-base/7 text-pretty">
+                Tell us what you're building and when it needs to be live. We'll tell you
+                honestly whether we're the right studio for it.
+            </p>
         </div>
     </div>
+
+    {{-- Sitemap --}}
+    <div class="mx-auto max-w-6xl px-6 py-16">
+        <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            <div>
+                <h2 class="text-sm font-medium">Studio</h2>
+                <ul role="list" class="text-canvas/60 mt-5 flex flex-col gap-3.5 text-base sm:text-sm">
+                    <li><a href="/work" class="hover-line hover:text-canvas font-normal">Work</a></li>
+                    <li><a href="/news" class="hover-line hover:text-canvas font-normal">News</a></li>
+                    <li><a href="/about" class="hover-line hover:text-canvas font-normal">About</a></li>
+                    <li><a href="/#services" class="hover-line hover:text-canvas font-normal">Services</a></li>
+                    <li><a href="/#pricing" class="hover-line hover:text-canvas font-normal">Pricing</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="text-sm font-medium">Company</h2>
+                <ul role="list" class="text-canvas/60 mt-5 flex flex-col gap-3.5 text-base sm:text-sm">
+                    <li><a href="/about" class="hover-line hover:text-canvas font-normal">Team</a></li>
+                    <li><a href="/#faq" class="hover-line hover:text-canvas font-normal">FAQ</a></li>
+                    <li><a href="mailto:careers@amber.example" class="hover-line hover:text-canvas font-normal">Careers</a></li>
+                    <li><a href="mailto:studio@amber.example" class="hover-line hover:text-canvas font-normal">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="text-sm font-medium">Elsewhere</h2>
+                <ul role="list" class="text-canvas/60 mt-5 flex flex-col gap-3.5 text-base sm:text-sm">
+                    <li><a href="#" class="hover-line hover:text-canvas font-normal">X / Twitter</a></li>
+                    <li><a href="#" class="hover-line hover:text-canvas font-normal">LinkedIn</a></li>
+                    <li><a href="#" class="hover-line hover:text-canvas font-normal">Dribbble</a></li>
+                    <li><a href="#" class="hover-line hover:text-canvas font-normal">Read.cv</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="text-sm font-medium">Say hello</h2>
+                <ul role="list" class="text-canvas/60 mt-5 flex flex-col gap-3.5 text-base sm:text-sm">
+                    <li><a href="mailto:studio@amber.example" class="hover-line hover:text-canvas font-normal">studio@amber.example</a></li>
+                    <li><a href="tel:+15550100" class="hover-line hover:text-canvas font-normal">+1 (555) 010-0</a></li>
+                    <li class="text-canvas/40">Copenhagen &amp; remote</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-canvas/10 mt-16 flex flex-col gap-6 border-t pt-8 sm:flex-row sm:items-center sm:justify-between">
+            <a href="/" aria-label="Homepage">
+                <img src="https://assets.ui.sh/marks/1.svg?text=Amber&font=inter&weight=500&letterSpacing=-0.5&color=%23e05d38&textColor=%23f7f5f0" alt="Amber" class="h-6">
+            </a>
+            <p class="text-canvas/40 text-base sm:text-sm">&copy; 2026 Amber Studio. All rights reserved.</p>
+        </div>
+    </div>
+
 </footer>

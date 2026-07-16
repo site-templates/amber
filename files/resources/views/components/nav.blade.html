@@ -1,11 +1,56 @@
-<!-- Global nav. Rendered on every page by the layout. -->
-<header class="sticky top-0 z-50 border-b border-[#1c1917]/5 bg-[#f7f5f0]/85 backdrop-blur-md">
-    <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <a href="/" class="font-serif-display text-xl tracking-tight">Calloway<em class="text-[#e05d38]">.</em></a>
-        <div class="flex items-center gap-6 text-sm font-medium text-stone-500">
-            <a href="/work" class="hover-line transition hover:text-stone-900">Work</a>
-            <a href="/about" class="hover-line transition hover:text-stone-900">About</a>
-            <a href="mailto:june@example.com" class="rounded-full bg-[#1c1917] px-4 py-1.5 font-semibold text-[#f7f5f0] transition hover:bg-[#e05d38] active:scale-[0.98]">Book a call</a>
+{{-- Global nav. Rendered on every page by the layout. --}}
+{{--
+    The wordmark is centered on the page, not between the side items: the two
+    flex-1 gutters either side are what hold it in the true middle.
+--}}
+{{--
+    The header is flush with the page until you scroll, then eases in its hairline
+    and shadow — public/js/main.js sets data-scrolled past the first few pixels.
+--}}
+<header id="header" class="bg-canvas/80 sticky top-0 z-50 backdrop-blur-md transition-shadow duration-300 ease-out data-scrolled:shadow-header">
+    <nav class="relative mx-auto flex max-w-6xl items-center gap-4 px-6 py-3.5">
+
+        <div class="flex flex-1 items-center">
+            {{-- Desktop links --}}
+            <div class="text-ink/60 flex items-center gap-7 text-sm max-lg:hidden">
+                <a href="/work" class="hover-line hover:text-ink aria-[current=page]:text-ink">Work</a>
+                <a href="/news" class="hover-line hover:text-ink aria-[current=page]:text-ink">News</a>
+                <a href="/about" class="hover-line hover:text-ink aria-[current=page]:text-ink">About</a>
+                <a href="/#pricing" class="hover-line hover:text-ink">Pricing</a>
+            </div>
+
+            {{-- Mobile menu — a plain <details>, so it needs no JavaScript --}}
+            <details class="group lg:hidden">
+                <summary class="text-ink relative flex items-center" aria-label="Open menu">
+                    <span class="absolute top-1/2 left-1/2 size-[max(100%,3rem)] -translate-1/2 pointer-fine:hidden" aria-hidden="true"></span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="stroke-current size-6 group-open:hidden">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+                    </svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="stroke-current group-not-open:hidden size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+                    </svg>
+                </summary>
+
+                {{-- Same single box-shadow as the header, so the panel's edge matches it --}}
+                <div class="bg-canvas shadow-header absolute inset-x-0 top-full p-6">
+                    <div class="flex flex-col gap-1 text-lg">
+                        <a href="/work" class="hover:bg-ink/5 -mx-3 rounded-lg px-3 py-2">Work</a>
+                        <a href="/news" class="hover:bg-ink/5 -mx-3 rounded-lg px-3 py-2">News</a>
+                        <a href="/about" class="hover:bg-ink/5 -mx-3 rounded-lg px-3 py-2">About</a>
+                        <a href="/#pricing" class="hover:bg-ink/5 -mx-3 rounded-lg px-3 py-2">Pricing</a>
+                    </div>
+                </div>
+            </details>
         </div>
+
+        <a href="/" aria-label="Homepage" class="shrink-0">
+            <svg class="h-[22px] -translate-y-0.5 w-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 147 40"><path fill="currentColor" d="M27.4 38.9v.3c-1 .4-2.3.7-3.3.7-2.6 0-5-1.4-5-5.3v-2.8H19c-1.5 3.9-5.3 8.1-11.2 8.1-4.4 0-7.8-2.2-7.8-6.4 0-9.8 15.8-9.9 15.8-9.9l.1.5c-5.7 1.2-11 3.7-11 8.7 0 3 2.1 5 5.4 5 5.2 0 8.9-4.9 9.1-10.8.1-1.5.1-2.9.1-3.9 0-5.8-3-8.2-7.2-8.2-3.5 0-6.8 1.9-8.7 4.8l-.4-3.3c3-1.1 6.8-2.5 11-2.5 5.6 0 9.9 2.4 9.9 9.3 0 3.1-.1 6.4-.1 10.6 0 4 1.5 5 3.4 5.1M71.5 38.9v.2h-9.1v-.2c1.3-.7 1.8-1.8 1.8-4.5V22.6c0-4.1-1.7-6.5-5.2-6.5-2.9 0-4.8 1.8-5.9 4.3l.1 1.2c.1.7.1 1.4.1 2.1v10.7c0 2.7.5 3.9 1.9 4.5v.2h-9.1L46 39c1.4-.7 2-1.8 2-4.6V22.9c0-4.1-1.8-6.8-5.3-6.8-2.9 0-4.9 1.8-6 4.7v13.6c0 2.7.5 3.9 2 4.5v.2h-9.3l-.2-.2c1.5-.6 2-1.8 2-4.5V21.3c0-2.6-.5-4.1-2-4.8v-.2c2.5-.3 4.9-.8 7.2-1.8v4.8c1.5-3.1 4.5-5.3 8.4-5.3 3.6 0 6.3 1.7 7.6 5.1 1.6-2.7 4.5-5.1 8.7-5.1s8.2 2.3 8.2 8.9v11.2c.1 3.1.5 4.1 2.2 4.8M101.1 27.3c0 7.2-4.3 12.5-11.7 12.5-5.7 0-7.8-2.9-9.7-3.2-2.1-.3-3.2 1.8-4.1 2.6l-.2-.1c.2-1.4.3-2.9.3-4.6V7.7c0-2.5-.6-3.5-2-4.1v-.4c2.2-.5 4.7-1.3 7.2-3.2v19.6c2.1-3.3 5.2-5.4 8.9-5.4 6.4 0 11.3 5.1 11.3 13.1m-5.2.3c0-6.9-3.4-11.7-7.9-11.7-3 0-6 2.1-7.2 5.6v10.8c.2 3.9 2.9 6.4 6.8 6.4 4.6 0 8.3-4.3 8.3-11.1M109.1 24.6v.8c0 7.5 4.2 11.8 9.2 11.8 2.8 0 5.8-1.1 7.7-3.9l.4.3c-2 3.8-5.3 6.3-10.2 6.3-6.6 0-12-4.3-12-12.1 0-6.9 5.3-13.7 12.4-13.7 5.5 0 10.2 3.8 9.8 10.5zm.1-.9h12.3c.9-5.2-1.7-8.7-5.4-8.7-3.4 0-6.6 2.9-6.9 8.7M146.8 15l-.1 4.7c-1.7-1.8-3.4-2.9-5.5-2.9s-4.2 1.7-5.1 4.6l.1 13c0 2.7.6 3.9 2.1 4.5v.2h-8.8l.1-.2c1.4-.6 1.9-1.8 1.9-4.5l-.1-13.1c0-2.7-.6-4.2-1.8-4.7v-.3c2.2-.3 4.6-.8 6.9-1.8v5.1c1.3-2.9 4.1-5.5 7.3-5.5 1.3 0 2.3.4 3 .9"/></svg>
+        </a>
+
+        <div class="flex flex-1 items-center justify-end">
+            {{-- Deliberately smaller than the hero CTA, so the hero stays the loudest thing on the page --}}
+            <a href="mailto:studio@amber.example" class="bg-ink text-canvas hover:bg-accent focus-visible:outline-accent rounded-full px-3.5 py-2 text-sm focus-visible:outline-2 focus-visible:outline-offset-2">Book a call</a>
+        </div>
+
     </nav>
 </header>

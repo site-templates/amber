@@ -1,97 +1,202 @@
 /*
-    Custom CSS, inlined after Tailwind by @vite in the layout.
+    Amber — design tokens, prose, motion, and utilities.
+
+    This file is inlined after Tailwind, so it can use @theme, @utility and @variant.
+    Web fonts are loaded with a <link> tag in the layout head instead of from here.
+
+    The whole template is driven by the four colors and two fonts below —
+    change --color-accent and the entire site follows.
 */
 
-html {
-    scroll-behavior: smooth;
+@theme {
+    /* Halant for display, Geist for everything else. */
+    --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Halant", ui-serif, Georgia, serif;
+
+    /* The palette. Warm cream page, near-black ink, one persimmon accent. */
+    --color-canvas: #f7f5f0;
+    --color-surface: #fffdfa;
+    --color-ink: #1c1917;
+    --color-accent: #e05d38;
+
+    /* One radius for every large card, panel, and image on the site. */
+    --radius-card: var(--radius-3xl);
+
+    /*
+        The sticky header's scrolled state. The hairline and the drop are one
+        box-shadow rather than a border plus a shadow, so nothing doubles up on
+        the edge and the whole thing animates as a single property.
+    */
+    --shadow-header: 0 1px 0 0 rgb(28 25 23 / 0.06), 0 8px 7px -12px rgb(28 25 23 / 0.28);
+
+    /* The easing every transition on the site shares. */
+    --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-body {
-    font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+html {
+    /* Native fallback, used when JS or the Lenis CDN is unavailable. */
+    scroll-behavior: smooth;
+    /* Anchor links land below the sticky header instead of behind it. */
+    scroll-padding-top: --spacing(24);
+}
+
+/*
+    Lenis drives the scroll position itself, one frame at a time. Native smooth
+    behaviour would try to animate each of those steps and fight it, so it is
+    turned off as soon as Lenis marks the document.
+*/
+html.lenis {
+    scroll-behavior: auto;
+}
+
+::selection {
+    background-color: var(--color-accent);
+    color: var(--color-canvas);
 }
 
 /* Visible keyboard focus, in the accent. */
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible {
-    outline: 2px solid #e05d38;
+    outline: 2px solid var(--color-accent);
     outline-offset: 3px;
+    border-radius: var(--radius-sm);
 }
 
-.font-serif-display {
-    font-family: 'Instrument Serif', ui-serif, Georgia, serif;
-    font-weight: 400;
+/*
+    The white dot grid over the hero image — the template's signature.
+    One masked background beats a wall of divs, and it tiles at any size.
+*/
+@utility dot-grid {
+    background-image: radial-gradient(circle at center, rgb(255 255 255 / 0.9) 3.5px, transparent 4px);
+    background-size: 38px 38px;
+    /* Centered, so the grid clips evenly on both edges instead of only the right */
+    background-position: center;
+    /*
+        The grid can't know how many whole dots fit, so the edges are masked
+        instead — half-dots fade out rather than getting sliced off.
+    */
+    mask-image:
+        linear-gradient(to right, transparent, #000 7%, #000 93%, transparent),
+        linear-gradient(to bottom, transparent, #000 9%, #000 91%, transparent);
+    mask-composite: intersect;
 }
 
-::selection {
-    background-color: #e05d38;
-    color: #f7f5f0;
-}
-
-/* Small-caps section labels. */
-.eyebrow {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #a8a29e;
-}
-
-/* Entrance animation, staggered with inline animation-delay. */
-.fade-up {
-    animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-@keyframes fade-up {
-    from {
-        opacity: 0;
-        transform: translateY(14px);
-    }
-    to {
-        opacity: 1;
-        transform: none;
-    }
-}
-
-/* Animated underline for text links. */
-.hover-line {
+/*
+    Animated underline for text links. Grows from the left on hover, so it
+    reads as motion rather than a color swap.
+*/
+@utility hover-line {
     background-image: linear-gradient(currentColor, currentColor);
     background-position: 0 100%;
     background-repeat: no-repeat;
     background-size: 0 1px;
     transition: background-size 0.25s ease;
+
+    &:hover {
+        background-size: 100% 1px;
+    }
 }
 
-.hover-line:hover {
-    background-size: 100% 1px;
+/*
+    Scroll reveals.
+
+    Elements marked [data-reveal] rise into place as they enter the viewport —
+    public/js/main.js adds .is-revealed via IntersectionObserver.
+
+    The hidden state is scoped to .js, which main.js puts on <html> before paint.
+    Without JavaScript the rule never matches and everything renders normally,
+    so content is never trapped behind an animation that will not run.
+
+    Two flavours:
+      [data-reveal]        — the element itself rises
+      [data-reveal-group]  — its children rise one after another
+
+    Stagger a single element by adding an [--reveal-delay:120ms] class to it.
+*/
+.js [data-reveal],
+.js [data-reveal-group] > * {
+    opacity: 0;
+    transform: translateY(20px);
 }
 
-/* FAQ accordion — arrow rotates when open. */
-details.faq summary {
-    cursor: pointer;
-    list-style: none;
+.js [data-reveal].is-revealed,
+.js [data-reveal-group].is-revealed > * {
+    opacity: 1;
+    transform: none;
 }
 
-details.faq summary::-webkit-details-marker {
-    display: none;
+@media (prefers-reduced-motion: no-preference) {
+    .js [data-reveal],
+    .js [data-reveal-group] > * {
+        transition:
+            opacity 0.9s var(--ease-out-soft),
+            transform 0.9s var(--ease-out-soft);
+        transition-delay: var(--reveal-delay, 0ms);
+        will-change: opacity, transform;
+    }
+
+    /* The cascade. Handled here so a @foreach never has to compute a delay. */
+    .js [data-reveal-group] > *:nth-child(2) {
+        transition-delay: 90ms;
+    }
+
+    .js [data-reveal-group] > *:nth-child(3) {
+        transition-delay: 180ms;
+    }
+
+    .js [data-reveal-group] > *:nth-child(4) {
+        transition-delay: 270ms;
+    }
+
+    .js [data-reveal-group] > *:nth-child(5) {
+        transition-delay: 360ms;
+    }
+
+    .js [data-reveal-group] > *:nth-child(n + 6) {
+        transition-delay: 450ms;
+    }
 }
 
-details.faq summary .faq-icon {
-    transition: transform 0.25s ease;
+/* No motion preference: reveal instantly rather than fading. */
+@media (prefers-reduced-motion: reduce) {
+    .js [data-reveal],
+    .js [data-reveal-group] > * {
+        opacity: 1;
+        transform: none;
+    }
 }
 
-details.faq[open] summary .faq-icon {
-    transform: rotate(90deg);
+/* The plus in a FAQ row turns into a close icon when the row opens. */
+@utility faq-row {
+    & summary {
+        cursor: pointer;
+        list-style: none;
+    }
+
+    & summary::-webkit-details-marker {
+        display: none;
+    }
+
+    & .faq-icon {
+        transition: transform 0.3s var(--ease-out-soft);
+    }
+
+    &[open] .faq-icon {
+        transform: rotate(45deg);
+    }
 }
 
 /* Pulsing availability dot. */
-.pulse-dot::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 9999px;
-    background: #16a34a;
-    animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+@utility pulse-dot {
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: var(--radius-full);
+        background: currentColor;
+        animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
 }
 
 @keyframes pulse-ring {
@@ -103,5 +208,167 @@ details.faq[open] summary .faq-icon {
     100% {
         transform: scale(2.4);
         opacity: 0;
+    }
+}
+
+/*
+    Article body styles. The markup inside a post is plain HTML, so it is styled
+    here by element rather than with utility classes on every tag.
+    Width is not set here — add a max-w-[*ch] class next to `prose` in the markup.
+*/
+@utility prose {
+    color: --alpha(var(--color-ink) / 65%);
+    font-size: var(--text-base);
+    line-height: --spacing(7);
+    text-wrap: pretty;
+
+    & > * + * {
+        margin-top: --spacing(6);
+    }
+
+    & h2 {
+        margin-top: --spacing(14);
+        color: var(--color-ink);
+        font-family: var(--font-display);
+        font-size: var(--text-4xl);
+        font-weight: var(--font-weight-normal);
+        letter-spacing: var(--tracking-tight);
+        line-height: 1.2;
+        text-wrap: balance;
+    }
+
+    & h3 {
+        margin-top: --spacing(10);
+        color: var(--color-ink);
+        font-family: var(--font-display);
+        font-size: var(--text-2xl);
+        font-weight: var(--font-weight-normal);
+        letter-spacing: var(--tracking-tight);
+        text-wrap: balance;
+    }
+
+    & h4,
+    & h5,
+    & h6 {
+        margin-top: --spacing(8);
+        color: var(--color-ink);
+        font-size: var(--text-base);
+        font-weight: var(--font-weight-medium);
+    }
+
+    & strong {
+        color: var(--color-ink);
+        font-weight: var(--font-weight-medium);
+    }
+
+    & a {
+        color: var(--color-ink);
+        font-weight: var(--font-weight-medium);
+        text-decoration: underline;
+        text-decoration-color: --alpha(var(--color-accent) / 60%);
+        text-underline-offset: 3px;
+
+        @variant hover {
+            text-decoration-color: var(--color-accent);
+        }
+    }
+
+    & ul,
+    & ol {
+        padding-left: --spacing(5);
+    }
+
+    & ul {
+        list-style-type: disc;
+    }
+
+    & ol {
+        list-style-type: decimal;
+    }
+
+    & li::marker {
+        color: --alpha(var(--color-ink) / 30%);
+    }
+
+    & li + li {
+        margin-top: --spacing(2);
+    }
+
+    /* A lead paragraph — put class="lead" on the first <p> of an article. */
+    & .lead {
+        color: --alpha(var(--color-ink) / 75%);
+        font-size: var(--text-lg);
+        line-height: --spacing(8);
+    }
+
+    & blockquote {
+        margin-top: --spacing(10);
+        margin-bottom: --spacing(10);
+        border-left: 2px solid var(--color-accent);
+        padding-left: --spacing(6);
+        color: var(--color-ink);
+        font-family: var(--font-display);
+        font-size: var(--text-2xl);
+        line-height: 1.45;
+        text-wrap: pretty;
+    }
+
+    & blockquote p {
+        margin-top: 0;
+    }
+
+    & img {
+        border-radius: min(2vw, 24px);
+        outline: 1px solid --alpha(var(--color-ink) / 5%);
+        outline-offset: -1px;
+    }
+
+    & figcaption {
+        margin-top: --spacing(3);
+        color: --alpha(var(--color-ink) / 40%);
+        font-size: var(--text-sm);
+    }
+
+    & code {
+        background-color: --alpha(var(--color-ink) / 5%);
+        border-radius: var(--radius-sm);
+        padding: --spacing(0.5) --spacing(1.5);
+        font-size: var(--text-sm);
+    }
+
+    & pre {
+        overflow-x: auto;
+        border-radius: var(--radius-xl);
+        background-color: var(--color-ink);
+        padding: --spacing(5);
+        color: var(--color-canvas);
+        font-size: var(--text-sm);
+        line-height: --spacing(6);
+    }
+
+    & pre code {
+        background: none;
+        padding: 0;
+    }
+
+    & hr {
+        margin-top: --spacing(12);
+        margin-bottom: --spacing(12);
+        border-color: --alpha(var(--color-ink) / 10%);
+    }
+}
+
+/* Respect the OS setting — no entrances, no pulse. */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }

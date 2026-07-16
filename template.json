@@ -1,7 +1,7 @@
 {
     "name": "Amber",
     "dialect": "blade",
-    "description": "A warm, serif-led studio landing page of featured work, agency info, subscription pricing, and a numbered FAQ.",
+    "description": "A warm, serif-led studio landing page — an art-directed hero, numbered services, featured work, retainer pricing, an accordion FAQ, and a news section with full posts.",
     "icon": "\ud83d\udd8b\ufe0f",
     "repo": "https://github.com/site-templates/amber",
     "order": 5,
@@ -11,6 +11,7 @@
     "pages": [
         "Home",
         "Work",
+        "News",
         "About"
     ]
 }

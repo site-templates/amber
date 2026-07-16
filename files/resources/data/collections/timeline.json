@@ -1,30 +1,32 @@
 [
     {
         "order": 1,
-        "years": "2021 — now",
-        "role": "Founder & design partner",
-        "company": "Calloway Studio",
-        "note": "A one-person studio for founders — brand, product, and web, on subscription or by project."
+        "years": "2013",
+        "title": "A desk and a rented lamp",
+        "note": "June starts freelancing out of a Copenhagen apartment — logos, posters, and websites for anyone who would say yes. The habit of shipping starts here."
     },
     {
         "order": 2,
-        "years": "2018 — 2021",
-        "role": "Design lead",
-        "company": "Northlight",
-        "note": "Led a team of five designing fintech products for challenger banks across Europe."
+        "years": "2017",
+        "title": "The first real product",
+        "note": "A challenger bank hires us to design onboarding. Sixty thousand people walk through it in a year, and we stop thinking of design as decoration."
     },
     {
         "order": 3,
-        "years": "2015 — 2018",
-        "role": "Product designer",
-        "company": "Bright & Early",
-        "note": "First design hire. Took two products from beta to acquisition."
+        "years": "2021",
+        "title": "Amber becomes a studio",
+        "note": "Two more designers join. We write down the way we already worked — discovery first, no hand-offs, ship in weeks — and put a name on the door."
     },
     {
         "order": 4,
-        "years": "2013 — 2015",
-        "role": "Visual designer",
-        "company": "Freelance",
-        "note": "Logos, posters, and websites for anyone who would have me. Learned by shipping."
+        "years": "2024",
+        "title": "Design meets the codebase",
+        "note": "A design engineer joins and the Figma-to-production gap closes. Clients start getting components instead of screenshots."
+    },
+    {
+        "order": 5,
+        "years": "2026",
+        "title": "Four people, sixty-one launches",
+        "note": "Deliberately still four. We take two studio slots a quarter, which is the only way the work stays this close to the people making it."
     }
 ]

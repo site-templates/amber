@@ -1,0 +1,26 @@
+[
+    {
+        "order": 1,
+        "title": "Discover",
+        "summary": "Positioning, audience, and the one thing your product has to say.",
+        "detail": "A week of interviews, teardowns, and hard questions. You leave with a positioning line you can actually repeat, and we leave knowing what we're designing."
+    },
+    {
+        "order": 2,
+        "title": "Brand",
+        "summary": "Identity, type, palette, and the system that keeps it all honest.",
+        "detail": "Logo, typography, color, art direction, and a living set of rules — built so the twentieth asset looks as considered as the first."
+    },
+    {
+        "order": 3,
+        "title": "Build",
+        "summary": "Product and marketing design, drawn straight into shipped code.",
+        "detail": "We design in Figma and finish in Tailwind. Your engineers get components, not screenshots, and the handoff meeting stops being a negotiation."
+    },
+    {
+        "order": 4,
+        "title": "Evolve",
+        "summary": "Launch, measure, and keep sharpening it after the applause dies.",
+        "detail": "The launch is the midpoint. We stay on to test copy, tune funnels, and grow the system as the product finds its shape."
+    }
+]

@@ -6,10 +6,8 @@
         "service": "Brand & web",
         "year": "2026",
         "link": "#",
-        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
-        "alt": "Laptop on a desk showing analytics dashboards for the Harbor marketing site",
-        "color_from": "#c2714f",
-        "color_to": "#7c3f21"
+        "image": "https://assets.ui.sh/wallpapers/silk.webp?variant=crimson-surge",
+        "alt": ""
     },
     {
         "order": 2,
@@ -18,10 +16,8 @@
         "service": "Identity",
         "year": "2026",
         "link": "#",
-        "image": "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1600&auto=format&fit=crop",
-        "alt": "Fountain pen writing on paper — the editorial world of Quill & Co.",
-        "color_from": "#5f6c50",
-        "color_to": "#2c3323"
+        "image": "https://assets.ui.sh/wallpapers/silk.webp?variant=emerald-glint",
+        "alt": ""
     },
     {
         "order": 3,
@@ -30,22 +26,18 @@
         "service": "Product design",
         "year": "2025",
         "link": "#",
-        "image": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=1600&auto=format&fit=crop",
-        "alt": "A seedling growing from a jar of coins — Meadowbank's savings-as-a-garden idea",
-        "color_from": "#9a7b4f",
-        "color_to": "#4a3722"
+        "image": "https://assets.ui.sh/wallpapers/silk.webp?variant=sapphire-flux",
+        "alt": ""
     },
     {
         "order": 4,
         "title": "Copperline",
-        "description": "Design subscription for a dev-tools startup — landing pages, docs design, and a full component library.",
-        "service": "Subscription",
+        "description": "A design retainer for a dev-tools startup — landing pages, docs design, and a full component library.",
+        "service": "Retainer",
         "year": "2025",
         "link": "#",
-        "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop",
-        "alt": "Code editor open on a laptop — Copperline's developer-tools product",
-        "color_from": "#8c5a5a",
-        "color_to": "#3f2323"
+        "image": "https://assets.ui.sh/wallpapers/silk.webp?variant=midnight-violet",
+        "alt": ""
     },
     {
         "order": 5,
@@ -54,10 +46,8 @@
         "service": "Brand & web",
         "year": "2024",
         "link": "#",
-        "image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1600&auto=format&fit=crop",
-        "alt": "A lakeside cabin at dusk in Nordic light — the world of Solstice Sauna",
-        "color_from": "#4f6c7c",
-        "color_to": "#22333d"
+        "image": "https://assets.ui.sh/wallpapers/silk.webp?variant=cyan-glacier",
+        "alt": ""
     },
     {
         "order": 6,
@@ -66,9 +56,7 @@
         "service": "Product design",
         "year": "2024",
         "link": "#",
-        "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1600&auto=format&fit=crop",
-        "alt": "Receipts and a calculator on a desk — Paper Trail's tax-season territory",
-        "color_from": "#7a748c",
-        "color_to": "#37323f"
+        "image": "https://assets.ui.sh/wallpapers/silk.webp?variant=platinum-flow",
+        "alt": ""
     }
 ]

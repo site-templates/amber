@@ -1,56 +1,178 @@
-<!-- Homepage — served at "/". -->
-<x-layouts.main title="Design partner for founders" description="Calloway Studio is a one-person design studio helping founders launch brands, products, and websites they're proud of.">
+{{-- Homepage — served at "/". --}}
+<x-layouts.main title="A design studio for founders" description="Amber is a four-person design studio for founders — brand, product, and web, from first sketch to shipped code.">
 
-    <!-- ============ Hero ============ -->
-    <section class="mx-auto max-w-5xl px-6 pt-20 pb-20 sm:pt-28">
-        <p class="fade-up inline-flex items-center gap-2.5 rounded-full border border-[#1c1917]/10 bg-white px-4 py-1.5 text-xs font-semibold text-stone-600">
-            <span class="relative flex h-2 w-2"><span class="pulse-dot relative inline-flex h-2 w-2 rounded-full bg-green-600"></span></span>
-            Two client slots open this quarter
-        </p>
+    {{-- ============ Hero ============ --}}
+    {{--
+        The vertical rhythm here is tuned so the image below starts before the fold
+        on a laptop — keep an eye on it if you add anything above the headline.
+    --}}
+    <section class="pt-10 pb-20 sm:pt-14">
+        <div class="mx-auto max-w-6xl px-6">
+            <div class="flex flex-col items-center text-center">
+                {{-- Star rating. One label for the whole row, so it isn't read out five times. --}}
+                <div class="flex flex-col items-center gap-2.5" data-reveal>
+                    <div class="flex items-center gap-1" role="img" aria-label="Rated five out of five">
+                        <svg viewBox="0 0 16 16" class="fill-accent/55 size-4 shrink-0" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.99934 1.75C8.30229 1.75 8.57549 1.93226 8.69183 2.21198L10.1029 5.60466L13.7656 5.8983C14.0676 5.92251 14.3254 6.12601 14.419 6.41413C14.5126 6.70226 14.4237 7.01841 14.1936 7.21549L11.403 9.60592L12.2556 13.1801C12.3259 13.4748 12.212 13.7828 11.9669 13.9609C11.7218 14.1389 11.3936 14.1521 11.1351 13.9942L7.99934 12.0788L4.86357 13.9942C4.60503 14.1521 4.27688 14.1389 4.03179 13.9609C3.7867 13.7828 3.6728 13.4748 3.7431 13.1801L4.59566 9.60592L1.80508 7.21549C1.57501 7.01841 1.48609 6.70226 1.57971 6.41413C1.67333 6.12601 1.93109 5.92251 2.23307 5.8983L5.89575 5.60466L7.30685 2.21198C7.42319 1.93226 7.69639 1.75 7.99934 1.75Z"/></svg>
+                        <svg viewBox="0 0 16 16" class="fill-accent/55 size-4 shrink-0" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.99934 1.75C8.30229 1.75 8.57549 1.93226 8.69183 2.21198L10.1029 5.60466L13.7656 5.8983C14.0676 5.92251 14.3254 6.12601 14.419 6.41413C14.5126 6.70226 14.4237 7.01841 14.1936 7.21549L11.403 9.60592L12.2556 13.1801C12.3259 13.4748 12.212 13.7828 11.9669 13.9609C11.7218 14.1389 11.3936 14.1521 11.1351 13.9942L7.99934 12.0788L4.86357 13.9942C4.60503 14.1521 4.27688 14.1389 4.03179 13.9609C3.7867 13.7828 3.6728 13.4748 3.7431 13.1801L4.59566 9.60592L1.80508 7.21549C1.57501 7.01841 1.48609 6.70226 1.57971 6.41413C1.67333 6.12601 1.93109 5.92251 2.23307 5.8983L5.89575 5.60466L7.30685 2.21198C7.42319 1.93226 7.69639 1.75 7.99934 1.75Z"/></svg>
+                        <svg viewBox="0 0 16 16" class="fill-accent/55 size-4 shrink-0" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.99934 1.75C8.30229 1.75 8.57549 1.93226 8.69183 2.21198L10.1029 5.60466L13.7656 5.8983C14.0676 5.92251 14.3254 6.12601 14.419 6.41413C14.5126 6.70226 14.4237 7.01841 14.1936 7.21549L11.403 9.60592L12.2556 13.1801C12.3259 13.4748 12.212 13.7828 11.9669 13.9609C11.7218 14.1389 11.3936 14.1521 11.1351 13.9942L7.99934 12.0788L4.86357 13.9942C4.60503 14.1521 4.27688 14.1389 4.03179 13.9609C3.7867 13.7828 3.6728 13.4748 3.7431 13.1801L4.59566 9.60592L1.80508 7.21549C1.57501 7.01841 1.48609 6.70226 1.57971 6.41413C1.67333 6.12601 1.93109 5.92251 2.23307 5.8983L5.89575 5.60466L7.30685 2.21198C7.42319 1.93226 7.69639 1.75 7.99934 1.75Z"/></svg>
+                        <svg viewBox="0 0 16 16" class="fill-accent/55 size-4 shrink-0" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.99934 1.75C8.30229 1.75 8.57549 1.93226 8.69183 2.21198L10.1029 5.60466L13.7656 5.8983C14.0676 5.92251 14.3254 6.12601 14.419 6.41413C14.5126 6.70226 14.4237 7.01841 14.1936 7.21549L11.403 9.60592L12.2556 13.1801C12.3259 13.4748 12.212 13.7828 11.9669 13.9609C11.7218 14.1389 11.3936 14.1521 11.1351 13.9942L7.99934 12.0788L4.86357 13.9942C4.60503 14.1521 4.27688 14.1389 4.03179 13.9609C3.7867 13.7828 3.6728 13.4748 3.7431 13.1801L4.59566 9.60592L1.80508 7.21549C1.57501 7.01841 1.48609 6.70226 1.57971 6.41413C1.67333 6.12601 1.93109 5.92251 2.23307 5.8983L5.89575 5.60466L7.30685 2.21198C7.42319 1.93226 7.69639 1.75 7.99934 1.75Z"/></svg>
+                        <svg viewBox="0 0 16 16" class="fill-accent/55 size-4 shrink-0" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.99934 1.75C8.30229 1.75 8.57549 1.93226 8.69183 2.21198L10.1029 5.60466L13.7656 5.8983C14.0676 5.92251 14.3254 6.12601 14.419 6.41413C14.5126 6.70226 14.4237 7.01841 14.1936 7.21549L11.403 9.60592L12.2556 13.1801C12.3259 13.4748 12.212 13.7828 11.9669 13.9609C11.7218 14.1389 11.3936 14.1521 11.1351 13.9942L7.99934 12.0788L4.86357 13.9942C4.60503 14.1521 4.27688 14.1389 4.03179 13.9609C3.7867 13.7828 3.6728 13.4748 3.7431 13.1801L4.59566 9.60592L1.80508 7.21549C1.57501 7.01841 1.48609 6.70226 1.57971 6.41413C1.67333 6.12601 1.93109 5.92251 2.23307 5.8983L5.89575 5.60466L7.30685 2.21198C7.42319 1.93226 7.69639 1.75 7.99934 1.75Z"/></svg>
+                    </div>
+                    <p class="text-base sm:text-sm">Helped over 50 founders launch</p>
+                </div>
 
-        <h1 class="fade-up font-serif-display mt-8 max-w-3xl text-balance text-5xl leading-[1.05] tracking-tight sm:text-7xl" style="animation-delay: .05s">
-            The design partner your <em class="text-[#e05d38]">launch</em> has been waiting for
-        </h1>
+                {{-- Sized to sit on a single line from lg up; it wraps below that, where it can't fit --}}
+                <h1 class="font-display mt-6 max-w-[42ch] text-4xl tracking-tight text-balance [--reveal-delay:50ms] sm:text-5xl lg:text-6xl" data-reveal>
+                    Build Your Brand
+                </h1>
 
-        <p class="fade-up mt-8 max-w-lg text-lg leading-relaxed text-stone-500" style="animation-delay: .1s">
-            I'm June Calloway. For twelve years I've helped founders turn ideas into
-            brands, products, and websites that convert — as a subscription or one
-            project at a time.
-        </p>
+                <p class="text-ink/60 mt-6 max-w-[48ch] text-lg/8 text-pretty [--reveal-delay:100ms]" data-reveal>
+                    A four-person design studio for founders — brand, product, and web,
+                    from first sketch to shipped code.
+                </p>
 
-        <div class="fade-up mt-10 flex flex-wrap items-center gap-5" style="animation-delay: .15s">
-            <a href="mailto:june@example.com" class="rounded-full bg-[#1c1917] px-7 py-3 text-sm font-semibold text-[#f7f5f0] transition hover:bg-[#e05d38] active:scale-[0.98]">Book an intro call</a>
-            <a href="/work" class="hover-line text-sm font-medium text-stone-500 transition hover:text-stone-900">Browse the work &rarr;</a>
+                <div class="mt-8 flex flex-wrap items-center justify-center gap-3 [--reveal-delay:150ms]" data-reveal>
+                    {{-- The one primary button on the page. Everything else defers to it. --}}
+                    <a href="mailto:studio@amber.example" class="bg-ink text-canvas hover:bg-accent focus-visible:outline-accent rounded-full px-4 py-3 text-base focus-visible:outline-2 focus-visible:outline-offset-2 transition-transform active:scale-[0.98] sm:text-sm">Book an intro call</a>
+                    <a href="/work" class="bg-ink/5 text-ink hover:bg-ink/10 focus-visible:outline-accent inline-flex items-center gap-1.5 rounded-full py-3 pr-3 pl-4 text-base focus-visible:outline-2 focus-visible:outline-offset-2 transition-transform active:scale-[0.98] sm:text-sm">
+                        See the work
+                        <svg viewBox="0 0 16 16" class="fill-current size-4 h-lh shrink-0">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            {{-- The showpiece. The dot grid is the template's signature — see dot-grid in site.css. --}}
+            <div class="relative mt-12 aspect-4/3 overflow-hidden rounded-[min(2vw,24px)] outline-1 -outline-offset-1 outline-black/5 [--reveal-delay:200ms] sm:aspect-16/7" data-reveal>
+                <img src="https://assets.ui.sh/wallpapers/silk.webp?variant=molten-amber" alt="" class="size-full object-cover">
+                <div class="dot-grid absolute inset-4" aria-hidden="true"></div>
+            </div>
         </div>
     </section>
 
-    <!-- ============ Featured work ============ -->
-    <!--
-        Loops over collections/projects.json, showing the first 4 (see the break below).
-        The full grid lives on pages/work.blade.html.
-    -->
-    <section class="border-t border-[#1c1917]/5 bg-white/60">
-        <div class="mx-auto max-w-5xl px-6 py-20">
-            <div class="flex items-end justify-between">
-                <h2 class="eyebrow">Featured work</h2>
-                <a href="/work" class="hover-line text-sm text-stone-500 transition hover:text-stone-900">View all &rarr;</a>
+    {{-- ============ Logo cloud ============ --}}
+    {{-- Centered to match the hero above it — the cloud reads as part of the hero. --}}
+    <section class="pb-20">
+        <div class="mx-auto max-w-6xl px-6">
+            <p class="text-ink/40 text-center text-base sm:text-sm">Trusted by teams at</p>
+            <div class="mt-8 grid grid-cols-2 items-center gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-6" data-reveal-group>
+                <img src="https://assets.ui.sh/logos/align.svg?color=%231c1917" alt="Align" class="h-6 justify-self-center opacity-40">
+                <img src="https://assets.ui.sh/logos/artifact.svg?color=%231c1917" alt="Artifact" class="h-6 justify-self-center opacity-40">
+                <img src="https://assets.ui.sh/logos/axiom.svg?color=%231c1917" alt="Axiom" class="h-6 justify-self-center opacity-40">
+                <img src="https://assets.ui.sh/logos/concise.svg?color=%231c1917" alt="Concise" class="h-6 justify-self-center opacity-40">
+                <img src="https://assets.ui.sh/logos/looply.svg?color=%231c1917" alt="Looply" class="h-6 justify-self-center opacity-40">
+                <img src="https://assets.ui.sh/logos/orbital.svg?color=%231c1917" alt="Orbital" class="h-6 justify-self-center opacity-40">
+            </div>
+        </div>
+    </section>
+
+    {{-- ============ Who we are ============ --}}
+    <section class="border-ink/5 border-t py-20 sm:py-28">
+        <div class="mx-auto max-w-6xl px-6">
+            <div class="grid gap-6 lg:grid-cols-12">
+                <div class="lg:col-span-7">
+                    <p class="bg-ink/5 text-ink/70 inline-flex rounded-full px-3 py-1 text-sm sm:text-xs">Who we are</p>
+                    <h2 class="font-display mt-6 max-w-[24ch] text-5xl tracking-tight text-balance sm:text-6xl">
+                        A studio built for <span class="text-ink/35">momentum</span>.
+                    </h2>
+                </div>
+                <div class="lg:col-span-5 lg:pt-16">
+                    <p class="text-ink/60 max-w-[56ch] text-base/7 text-pretty">
+                        We're four people who would rather ship than pitch. No account
+                        managers, no hand-offs, no telephone game — you work directly with
+                        the designers making the thing, and the work moves fast because of it.
+                    </p>
+                </div>
             </div>
 
-            <div class="mt-10 grid gap-8 sm:grid-cols-2">
+            {{-- Stats sit on one glass panel, split by hairlines, rather than three floating cards --}}
+            <div class="relative isolate mt-12 overflow-hidden rounded-[min(2vw,24px)] p-4 outline-1 -outline-offset-1 outline-black/5 sm:p-12" data-reveal>
+                <img src="https://assets.ui.sh/wallpapers/horizon.webp?variant=jade-corner" alt="" class="absolute inset-0 -z-10 size-full object-cover" loading="lazy">
+
+                <dl class="grid divide-y divide-white/15 rounded-[min(1.5vw,16px)] bg-white/10 p-6 ring-1 ring-white/15 backdrop-blur-md sm:p-8 lg:grid-cols-3 lg:divide-x lg:divide-y-0">
+                    <div class="flex flex-col-reverse gap-2 pb-6 lg:pr-8 lg:pb-0">
+                        <dt class="truncate text-base text-white/70 sm:text-sm">Projects shipped since 2013</dt>
+                        <dd class="font-display text-5xl tabular-nums text-white sm:text-6xl">61</dd>
+                    </div>
+                    <div class="flex flex-col-reverse gap-2 py-6 lg:px-8 lg:py-0">
+                        <dt class="truncate text-base text-white/70 sm:text-sm">Average brand to launch</dt>
+                        <dd class="font-display text-5xl tabular-nums text-white sm:text-6xl">6 wks</dd>
+                    </div>
+                    <div class="flex flex-col-reverse gap-2 pt-6 lg:pt-0 lg:pl-8">
+                        <dt class="truncate text-base text-white/70 sm:text-sm">Clients who come back</dt>
+                        <dd class="font-display text-5xl tabular-nums text-white sm:text-6xl">94%</dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </section>
+
+    {{-- ============ Services ============ --}}
+    {{-- Loops over collections/services.json. --}}
+    <section id="services" class="bg-surface border-ink/5 border-y py-20 sm:py-28">
+        <div class="mx-auto max-w-6xl px-6">
+            <div class="flex flex-col items-center text-center">
+                <p class="bg-ink/5 text-ink/70 inline-flex rounded-full px-3 py-1 text-sm sm:text-xs">What we do</p>
+                <h2 class="font-display mt-6 max-w-[24ch] text-5xl tracking-tight text-balance sm:text-6xl">
+                    We handle the <span class="text-ink/35">whole</span> launch.
+                </h2>
+                <p class="text-ink/60 mt-6 max-w-[48ch] text-base/7 text-pretty">
+                    Strategy, brand, product, and the code to ship it — one team, one
+                    thread, no hand-offs.
+                </p>
+            </div>
+
+            <dl class="border-ink/10 mt-14 border-t" data-reveal-group>
+                @foreach ($services as $service)
+                    <div class="border-ink/10 grid gap-x-6 gap-y-3 border-b py-8 sm:grid-cols-12 sm:items-baseline">
+                        <dt class="flex items-baseline gap-4 sm:col-span-4">
+                            <p class="text-accent text-sm tabular-nums">0{{ $loop->iteration }}</p>
+                            <p class="font-display text-5xl tracking-tight">{{ $service->title }}</p>
+                        </dt>
+                        <dd class="text-base sm:col-span-4 sm:text-sm">
+                            {{ $service->summary }}
+                        </dd>
+                        <dd class="text-ink/50 text-base/7 text-pretty sm:col-span-4 sm:text-sm/6">
+                            {{ $service->detail }}
+                        </dd>
+                    </div>
+                @endforeach
+            </dl>
+        </div>
+    </section>
+
+    {{-- ============ Featured work ============ --}}
+    {{--
+        Loops over collections/projects.json, showing the first 4 (see the break below).
+        The full grid lives on pages/work.blade.html.
+    --}}
+    <section class="py-20 sm:py-28">
+        <div class="mx-auto max-w-6xl px-6">
+            <div class="flex flex-wrap items-end justify-between gap-4">
+                <div>
+                    <p class="bg-ink/5 text-ink/70 inline-flex rounded-full px-3 py-1 text-sm sm:text-xs">Selected work</p>
+                    <h2 class="font-display mt-6 max-w-[24ch] text-5xl tracking-tight text-balance sm:text-6xl">
+                        Six launches, six <span class="text-ink/35">new</span> beginnings.
+                    </h2>
+                </div>
+                <a href="/work" class="hover-line text-ink/60 hover:text-ink text-base sm:text-sm">View all work &rarr;</a>
+            </div>
+
+            <div class="mt-12 grid gap-6 sm:grid-cols-2" data-reveal-group>
                 @foreach ($projects as $project)
-                    <a href="{{ $project->link }}" class="group block">
-                        <!-- Art-directed tile: the photo is tinted by the collection's color fields -->
-                        <div class="relative flex aspect-[4/3] items-end overflow-hidden rounded-2xl p-6 shadow-sm transition duration-300 group-hover:-translate-y-1 group-hover:shadow-lg">
-                            <img src="{{ $project->image }}" alt="{{ $project->alt }}" class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy">
-                            <span class="absolute inset-0 mix-blend-multiply opacity-55" style="background: linear-gradient(150deg, {{ $project->color_from }}, {{ $project->color_to }})"></span>
-                            <span class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/40 to-transparent"></span>
-                            <span class="font-serif-display relative text-3xl text-white/95">{{ $project->title }}</span>
+                    <a href="{{ $project->link }}" class="group min-w-0">
+                        {{-- Each client gets its own hue from one family of covers --}}
+                        <div class="relative flex aspect-4/3 items-end overflow-hidden rounded-[min(2vw,24px)] p-6 sm:p-7 outline-1 -outline-offset-1 outline-black/5">
+                            <img src="{{ $project->image }}" alt="{{ $project->alt }}" class="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                            <span class="absolute inset-x-0 bottom-0 h-2/3 bg-linear-to-t from-black/50 to-transparent" aria-hidden="true"></span>
+                            <h3 class="font-display relative text-4xl text-white sm:text-5xl">{{ $project->title }}</h3>
                         </div>
-                        <div class="mt-4 flex items-baseline justify-between">
-                            <h3 class="font-semibold">{{ $project->title }}</h3>
-                            <span class="text-xs font-medium uppercase tracking-widest text-stone-400">{{ $project->service }}</span>
+                        <div class="mt-4 flex items-baseline justify-between gap-4">
+                            <p class="min-w-0 truncate text-base font-medium sm:text-sm">{{ $project->service }}</p>
+                            <p class="text-ink/40 shrink-0 text-base tabular-nums sm:text-sm">{{ $project->year }}</p>
                         </div>
-                        <p class="mt-1.5 text-sm leading-relaxed text-stone-500">{{ $project->description }}</p>
+                        <p class="text-ink/50 mt-1.5 text-base/7 text-pretty sm:text-sm/6">{{ $project->description }}</p>
                     </a>
                     @break($loop->iteration == 4)
                 @endforeach
@@ -58,97 +180,195 @@
         </div>
     </section>
 
-    <!-- ============ Featured quote ============ -->
-    <!-- Renders only the testimonial flagged "featured" in collections/testimonials.json. -->
-    <section class="mx-auto max-w-5xl px-6 py-20">
-        @foreach ($testimonials as $testimonial)
-            @if ($testimonial->featured == true)
-                <figure class="rounded-3xl border border-[#1c1917]/5 bg-white p-10 shadow-sm sm:p-14">
-                    <blockquote class="font-serif-display max-w-3xl text-balance text-2xl leading-snug tracking-tight sm:text-4xl">
-                        &ldquo;{{ $testimonial->quote }}&rdquo;
-                    </blockquote>
-                    <figcaption class="mt-8 text-sm text-stone-500">
-                        <span class="font-semibold text-stone-900">{{ $testimonial->name }}</span> &middot; {{ $testimonial->role }}
-                    </figcaption>
-                </figure>
-            @endif
-        @endforeach
-    </section>
+    {{-- ============ Featured quote ============ --}}
+    {{-- Renders only the testimonial flagged "featured" in collections/testimonials.json. --}}
+    <section class="pb-20 sm:pb-28">
+        <div class="mx-auto max-w-6xl px-6">
+            @foreach ($testimonials as $testimonial)
+                @if ($testimonial->featured == true)
+                    <figure class="relative isolate overflow-hidden rounded-[min(2vw,24px)] px-8 py-16 outline-1 -outline-offset-1 outline-black/5 sm:px-14 sm:py-24" data-reveal>
+                        <img src="https://assets.ui.sh/wallpapers/horizon.webp?variant=sepia-rim" alt="" class="absolute inset-0 -z-10 size-full object-cover" loading="lazy">
+                        <div class="absolute inset-0 -z-10 bg-black/40" aria-hidden="true"></div>
 
-    <!-- ============ Craft & tools ============ -->
-    <section class="border-y border-[#1c1917]/5 bg-white/60">
-        <div class="mx-auto max-w-5xl px-6 py-14">
-            <p class="text-center text-xs font-semibold uppercase tracking-[0.18em] text-stone-400">The craft</p>
-            <p class="font-serif-display mx-auto mt-5 max-w-3xl text-center text-xl leading-relaxed text-stone-600 sm:text-2xl">
-                Brand identity &middot; Product design &middot; Web design &middot; Design systems
-                &middot; Figma &middot; Tailwind &middot; Motion &middot; Art direction
-            </p>
+                        <blockquote class="font-display relative max-w-[30ch] text-5xl tracking-tight text-balance text-white before:absolute before:inline before:-translate-x-full before:content-['\201C'] after:inline after:content-['\201D']">{{ $testimonial->quote }}</blockquote>
+                        <figcaption class="mt-10 flex items-center gap-4">
+                            <img src="{{ $testimonial->avatar }}" alt="" class="size-11 shrink-0 rounded-full object-cover outline-1 -outline-offset-1 outline-white/10">
+                            <div class="min-w-0 text-base sm:text-sm">
+                                <p class="truncate text-white">{{ $testimonial->name }}</p>
+                                <p class="truncate text-white/60">{{ $testimonial->role }}</p>
+                            </div>
+                        </figcaption>
+                    </figure>
+                @endif
+            @endforeach
         </div>
     </section>
 
-    <!-- ============ Pricing ============ -->
-    <section class="mx-auto max-w-5xl px-6 py-20">
-        <div class="max-w-xl">
-            <h2 class="eyebrow">Ways to work together</h2>
-            <p class="font-serif-display mt-4 text-balance text-3xl leading-tight tracking-tight sm:text-5xl">One subscription. Or one <em class="text-[#e05d38]">great</em> project.</p>
-        </div>
+    {{-- ============ Why us ============ --}}
+    <section class="border-ink/5 bg-surface border-y py-20 sm:py-28">
+        <div class="mx-auto max-w-6xl px-6">
+            <p class="bg-ink/5 text-ink/70 inline-flex rounded-full px-3 py-1 text-sm sm:text-xs">Why us</p>
+            <h2 class="font-display mt-6 max-w-[24ch] text-5xl tracking-tight text-balance sm:text-6xl">
+                We're not built like <span class="text-ink/35">most studios</span>.
+            </h2>
 
-        <div class="mt-12 grid gap-6 md:grid-cols-2">
-            <!-- The subscription — the flagship offer, on the dark card. -->
-            <div class="flex flex-col rounded-3xl bg-[#1c1917] p-9 text-[#f7f5f0]">
-                <div class="flex items-center justify-between">
-                    <h3 class="font-serif-display text-2xl">Design subscription</h3>
-                    <span class="rounded-full bg-[#e05d38] px-3 py-1 text-xs font-bold text-white">Most popular</span>
-                </div>
-                <p class="mt-2 text-sm text-stone-400">A design partner on retainer — for teams that always have a next thing.</p>
-                <p class="mt-8 flex items-baseline gap-2">
-                    <span class="font-serif-display text-5xl tracking-tight">$6,900</span>
-                    <span class="text-sm text-stone-400">/month</span>
-                </p>
-                <div class="mt-8 mb-9 flex flex-col gap-3 border-t border-white/10 pt-7 text-sm text-stone-300">
-                    <p class="flex items-center gap-2.5"><span class="text-[#e05d38]">&#10003;</span> Unlimited requests, one at a time</p>
-                    <p class="flex items-center gap-2.5"><span class="text-[#e05d38]">&#10003;</span> Two-day average turnaround</p>
-                    <p class="flex items-center gap-2.5"><span class="text-[#e05d38]">&#10003;</span> Brand, product, and web — all included</p>
-                    <p class="flex items-center gap-2.5"><span class="text-[#e05d38]">&#10003;</span> Pause or cancel anytime</p>
-                </div>
-                <a href="mailto:june@example.com" class="mt-auto block rounded-full bg-[#f7f5f0] px-5 py-3 text-center text-sm font-semibold text-[#1c1917] transition hover:bg-[#e05d38] hover:text-white active:scale-[0.98]">Start your subscription</a>
-            </div>
+            {{-- Same image family, two temperatures: the whole argument, made in one look. --}}
+            <div class="mt-12 grid gap-6 md:grid-cols-2" data-reveal-group>
+                <div class="relative isolate flex aspect-4/5 flex-col justify-between overflow-hidden rounded-[min(2vw,24px)] p-8 outline-1 -outline-offset-1 outline-black/5 sm:aspect-4/3 sm:p-10">
+                    <img src="https://assets.ui.sh/wallpapers/silk.webp?variant=platinum-flow" alt="" class="absolute inset-0 -z-10 size-full object-cover" loading="lazy">
+                    <div class="bg-ink/80 absolute inset-0 -z-10" aria-hidden="true"></div>
 
-            <!-- The single project — fixed scope, fixed quote. -->
-            <div class="flex flex-col rounded-3xl border border-[#1c1917]/10 bg-white p-9">
-                <h3 class="font-serif-display text-2xl">Single project</h3>
-                <p class="mt-2 text-sm text-stone-500">A brand, a site, or a product — scoped, quoted, and shipped.</p>
-                <p class="mt-8 flex items-baseline gap-2">
-                    <span class="font-serif-display text-5xl tracking-tight">From $12k</span>
-                    <span class="text-sm text-stone-400">fixed quote</span>
-                </p>
-                <div class="mt-8 mb-9 flex flex-col gap-3 border-t border-[#1c1917]/10 pt-7 text-sm text-stone-600">
-                    <p class="flex items-center gap-2.5"><span class="text-[#e05d38]">&#10003;</span> Four-to-six week engagements</p>
-                    <p class="flex items-center gap-2.5"><span class="text-[#e05d38]">&#10003;</span> Strategy, design, and build</p>
-                    <p class="flex items-center gap-2.5"><span class="text-[#e05d38]">&#10003;</span> Weekly progress reviews</p>
-                    <p class="flex items-center gap-2.5"><span class="text-[#e05d38]">&#10003;</span> Full ownership of every file</p>
+                    <ul role="list" class="flex flex-wrap gap-2">
+                        <li class="rounded-full bg-white/10 px-3 py-1 text-sm text-white/50 sm:text-xs">Discovery decks</li>
+                        <li class="rounded-full bg-white/10 px-3 py-1 text-sm text-white/50 sm:text-xs">Account managers</li>
+                        <li class="rounded-full bg-white/10 px-3 py-1 text-sm text-white/50 sm:text-xs">Quarterly timelines</li>
+                        <li class="rounded-full bg-white/10 px-3 py-1 text-sm text-white/50 sm:text-xs">Screenshots, not code</li>
+                    </ul>
+                    <div>
+                        <h3 class="font-display text-5xl tracking-tight text-white/70 sm:text-6xl">Most studios</h3>
+                        <p class="mt-4 max-w-[48ch] text-base/7 text-white/50 text-pretty">
+                            Sell you a process, bill you for the deck, and hand the file to
+                            someone who wasn't in the room.
+                        </p>
+                    </div>
                 </div>
-                <a href="mailto:june@example.com" class="mt-auto block rounded-full border border-[#1c1917]/15 px-5 py-3 text-center text-sm font-semibold text-stone-800 transition hover:border-[#1c1917] hover:bg-[#1c1917] hover:text-white active:scale-[0.98]">Request a quote</a>
+
+                <div class="bg-accent relative isolate flex aspect-4/5 flex-col justify-between overflow-hidden rounded-[min(2vw,24px)] p-8 outline-1 -outline-offset-1 outline-black/5 sm:aspect-4/3 sm:p-10">
+                    {{--
+                        The card is the brand accent itself. The wallpaper is blended into it
+                        rather than laid on top, so it gains the grain and light of the site's
+                        other imagery without losing the accent color.
+                    --}}
+                    <img src="https://assets.ui.sh/wallpapers/blend.webp?variant=golden-hour-mist" alt="" class="absolute inset-0 -z-10 size-full object-cover mix-blend-overlay" loading="lazy">
+
+                    <ul role="list" class="flex flex-wrap gap-2">
+                        <li class="rounded-full bg-white/15 px-3 py-1 text-sm text-white sm:text-xs">Direction in week one</li>
+                        <li class="rounded-full bg-white/15 px-3 py-1 text-sm text-white sm:text-xs">Four people, no layers</li>
+                        <li class="rounded-full bg-white/15 px-3 py-1 text-sm text-white sm:text-xs">Live in six weeks</li>
+                        <li class="rounded-full bg-white/15 px-3 py-1 text-sm text-white sm:text-xs">Shipped in Tailwind</li>
+                    </ul>
+                    <div>
+                        <h3 class="font-display text-5xl tracking-tight text-white sm:text-6xl">Amber</h3>
+                        <p class="mt-4 max-w-[48ch] text-base/7 text-white/80 text-pretty">
+                            Show you a real direction in week one, then stay on the tools
+                            until it's live and earning.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ============ Testimonials ============ -->
-    <!-- The featured quote already ran above, so skip it here with the inverted condition. -->
-    <section class="border-t border-[#1c1917]/5 bg-white/60">
-        <div class="mx-auto max-w-5xl px-6 py-20">
-            <div class="flex items-end justify-between">
-                <h2 class="eyebrow">Client notes</h2>
-                <p class="text-sm text-stone-400"><span class="font-serif-display text-2xl text-stone-900">61</span> projects shipped since 2013</p>
+    {{-- ============ Pricing ============ --}}
+    <section id="pricing" class="py-20 sm:py-28">
+        <div class="mx-auto max-w-6xl px-6">
+            <p class="bg-ink/5 text-ink/70 inline-flex rounded-full px-3 py-1 text-sm sm:text-xs">Ways to work together</p>
+            <h2 class="font-display mt-6 max-w-[24ch] text-5xl tracking-tight text-balance sm:text-6xl">
+                One retainer. Or one <span class="text-ink/35">great</span> project.
+            </h2>
+
+            <div class="mt-12 grid gap-6 md:grid-cols-2" data-reveal-group>
+                {{-- The retainer — emphasized with a stronger button and a label, not a different fill --}}
+                <div class="border-ink/10 bg-surface flex flex-col justify-between rounded-3xl border p-8 sm:p-10">
+                    <div>
+                        <div class="flex flex-wrap items-center justify-between gap-3">
+                            <h3 class="font-display text-5xl tracking-tight">Design retainer</h3>
+                            <p class="text-accent text-base sm:text-sm">Most popular</p>
+                        </div>
+                        <p class="text-ink/60 mt-3 max-w-[56ch] text-base/7 text-pretty">
+                            A studio on tap — for teams that always have a next thing.
+                        </p>
+                        <div class="mt-8 flex items-baseline gap-2">
+                            <p class="font-display text-6xl tracking-tight tabular-nums">$9,400</p>
+                            <p class="text-ink/40 text-base sm:text-sm">/month</p>
+                        </div>
+                        <ul role="list" class="border-ink/10 text-ink/70 mt-8 flex flex-col gap-3.5 border-t pt-8 text-base sm:text-sm">
+                            <li class="flex items-baseline gap-3">
+                                <svg viewBox="0 0 16 16" class="fill-accent size-4 h-lh shrink-0"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"/></svg>
+                                Unlimited requests, one at a time
+                            </li>
+                            <li class="flex items-baseline gap-3">
+                                <svg viewBox="0 0 16 16" class="fill-accent size-4 h-lh shrink-0"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"/></svg>
+                                Two-day average turnaround
+                            </li>
+                            <li class="flex items-baseline gap-3">
+                                <svg viewBox="0 0 16 16" class="fill-accent size-4 h-lh shrink-0"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"/></svg>
+                                Brand, product, and web — all included
+                            </li>
+                            <li class="flex items-baseline gap-3">
+                                <svg viewBox="0 0 16 16" class="fill-accent size-4 h-lh shrink-0"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"/></svg>
+                                Pause or cancel anytime
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-10">
+                        <a href="mailto:studio@amber.example" class="ring-ink/20 text-ink hover:ring-ink focus-visible:outline-accent block rounded-full px-4 py-3 text-center text-base ring-1 ring-inset focus-visible:outline-2 focus-visible:outline-offset-2 transition-transform active:scale-[0.98] sm:text-sm">Start a retainer</a>
+                    </div>
+                </div>
+
+                {{-- The single project — fixed scope, fixed quote --}}
+                <div class="border-ink/10 bg-surface flex flex-col justify-between rounded-3xl border p-8 sm:p-10">
+                    <div>
+                        <h3 class="font-display text-5xl tracking-tight">Single project</h3>
+                        <p class="text-ink/60 mt-3 max-w-[56ch] text-base/7 text-pretty">
+                            A brand, a site, or a product — scoped, quoted, and shipped.
+                        </p>
+                        <div class="mt-8 flex items-baseline gap-2">
+                            <p class="font-display text-6xl tracking-tight tabular-nums">From $18k</p>
+                            <p class="text-ink/40 text-base sm:text-sm">fixed</p>
+                        </div>
+                        <ul role="list" class="border-ink/10 text-ink/70 mt-8 flex flex-col gap-3.5 border-t pt-8 text-base sm:text-sm">
+                            <li class="flex items-baseline gap-3">
+                                <svg viewBox="0 0 16 16" class="fill-accent size-4 h-lh shrink-0"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"/></svg>
+                                Four-to-six week engagements
+                            </li>
+                            <li class="flex items-baseline gap-3">
+                                <svg viewBox="0 0 16 16" class="fill-accent size-4 h-lh shrink-0"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"/></svg>
+                                Strategy, design, and build
+                            </li>
+                            <li class="flex items-baseline gap-3">
+                                <svg viewBox="0 0 16 16" class="fill-accent size-4 h-lh shrink-0"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"/></svg>
+                                Weekly progress reviews
+                            </li>
+                            <li class="flex items-baseline gap-3">
+                                <svg viewBox="0 0 16 16" class="fill-accent size-4 h-lh shrink-0"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"/></svg>
+                                Full ownership of every file
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-10">
+                        <a href="mailto:studio@amber.example" class="bg-ink/5 text-ink hover:bg-ink/10 focus-visible:outline-accent block rounded-full px-4 py-3 text-center text-base focus-visible:outline-2 focus-visible:outline-offset-2 transition-transform active:scale-[0.98] sm:text-sm">Request a quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- ============ Testimonials ============ --}}
+    {{-- The featured quote already ran above, so skip it here with the inverted condition. --}}
+    <section class="border-ink/5 bg-surface border-y py-20 sm:py-28">
+        <div class="mx-auto max-w-6xl px-6">
+            <div class="flex flex-wrap items-end justify-between gap-4">
+                <div>
+                    <p class="bg-ink/5 text-ink/70 inline-flex rounded-full px-3 py-1 text-sm sm:text-xs">Client notes</p>
+                    <h2 class="font-display mt-6 max-w-[24ch] text-5xl tracking-tight text-balance sm:text-6xl">
+                        The part we can't <span class="text-ink/35">design</span>.
+                    </h2>
+                </div>
+                <p class="text-ink/40 text-base sm:text-sm">Sixty-one projects shipped since 2013</p>
             </div>
 
-            <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-reveal-group>
                 @foreach ($testimonials as $testimonial)
                     @if ($testimonial->featured != true)
-                        <figure class="flex flex-col justify-between rounded-2xl border border-[#1c1917]/5 bg-white p-7 shadow-sm">
-                            <blockquote class="text-sm leading-relaxed text-stone-600">&ldquo;{{ $testimonial->quote }}&rdquo;</blockquote>
-                            <figcaption class="mt-6 text-xs text-stone-400">
-                                <span class="font-semibold text-stone-800">{{ $testimonial->name }}</span> &middot; {{ $testimonial->role }}
+                        <figure class="border-ink/10 flex flex-col justify-between gap-8 rounded-3xl border p-7">
+                            <blockquote class="text-ink/70 relative text-base/7 text-pretty before:absolute before:inline before:-translate-x-full before:content-['\201C'] after:inline after:content-['\201D']">{{ $testimonial->quote }}</blockquote>
+                            <figcaption class="flex items-center gap-3">
+                                <img src="{{ $testimonial->avatar }}" alt="" class="size-9 shrink-0 rounded-full object-cover outline-1 -outline-offset-1 outline-black/5">
+                                <div class="min-w-0 text-base sm:text-sm">
+                                    <p class="truncate">{{ $testimonial->name }}</p>
+                                    <p class="text-ink/40 truncate">{{ $testimonial->role }}</p>
+                                </div>
                             </figcaption>
                         </figure>
                     @endif
@@ -157,23 +377,65 @@
         </div>
     </section>
 
-    <!-- ============ FAQ ============ -->
-    <!-- Numbered accordion — the loop counter drives the 01–05 index. -->
-    <section class="mx-auto max-w-3xl px-6 py-20">
-        <h2 class="eyebrow text-center">Questions, answered</h2>
-        <p class="font-serif-display mt-4 text-balance text-center text-3xl tracking-tight sm:text-4xl">Before you even ask</p>
+    {{-- ============ News ============ --}}
+    {{--
+        Loops over collections/news.json. Each post is a real page under
+        pages/news/{slug}.blade.html — the full index lives on pages/news.blade.html.
+    --}}
+    <section class="py-20 sm:py-28">
+        <div class="mx-auto max-w-6xl px-6">
+            <div class="flex flex-wrap items-end justify-between gap-4">
+                <div>
+                    <p class="bg-ink/5 text-ink/70 inline-flex rounded-full px-3 py-1 text-sm sm:text-xs">News</p>
+                    <h2 class="font-display mt-6 max-w-[24ch] text-5xl tracking-tight text-balance sm:text-6xl">
+                        Notes from the <span class="text-ink/35">studio</span>.
+                    </h2>
+                </div>
+                <a href="/news" class="hover-line text-ink/60 hover:text-ink text-base sm:text-sm">Read all news &rarr;</a>
+            </div>
 
-        <div class="mt-12 flex flex-col">
-            @foreach ($faq as $item)
-                <details class="faq border-t border-[#1c1917]/10 py-6">
-                    <summary class="flex items-baseline gap-5">
-                        <span class="font-serif-display text-sm text-[#e05d38]">0{{ $loop->iteration }}</span>
-                        <span class="flex-1 text-base font-semibold">{{ $item->question }}</span>
-                        <span class="faq-icon text-stone-400">&rarr;</span>
-                    </summary>
-                    <p class="mt-4 pl-10 text-sm leading-relaxed text-stone-500">{{ $item->answer }}</p>
-                </details>
-            @endforeach
+            <div class="mt-12 grid gap-6 sm:grid-cols-3" data-reveal-group>
+                @foreach ($news as $item)
+                    <a href="{{ $item->link }}" class="group">
+                        <div class="relative aspect-16/10 overflow-hidden rounded-[min(2vw,24px)] outline-1 -outline-offset-1 outline-black/5">
+                            <img src="{{ $item->image }}" alt="{{ $item->alt }}" class="size-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                        </div>
+                        <p class="text-accent mt-5 text-sm">{{ $item->category }}<span class="text-ink/20 mx-2">/</span><span class="text-ink/40">{{ $item->dateFormatted }}</span></p>
+                        <h3 class="font-display mt-3 max-w-[24ch] text-3xl tracking-tight text-pretty">{{ $item->title }}</h3>
+                        <p class="text-ink/50 mt-3 text-base/7 text-pretty sm:text-sm/6">{{ $item->description }}</p>
+                    </a>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- ============ FAQ ============ --}}
+    {{-- Loops over collections/faq.json — a plain <details> per row, so it needs no JavaScript. --}}
+    <section id="faq" class="bg-surface border-ink/5 border-y py-20 sm:py-28">
+        <div class="mx-auto max-w-6xl px-6">
+            <div class="flex flex-col items-center text-center">
+                <p class="bg-ink/5 text-ink/70 inline-flex rounded-full px-3 py-1 text-sm sm:text-xs">FAQ</p>
+                <h2 class="font-display mt-6 max-w-[24ch] text-5xl tracking-tight text-balance sm:text-6xl">
+                    Your questions, <span class="text-ink/35">answered</span>.
+                </h2>
+                <p class="text-ink/60 mt-6 max-w-[48ch] text-base/7 text-pretty">
+                    Still wondering something? Book a call and we'll talk it through.
+                </p>
+            </div>
+
+            <div class="mx-auto mt-14 flex max-w-3xl flex-col gap-3" data-reveal-group>
+                @foreach ($faq as $item)
+                    <details class="faq-row bg-ink/5 has-[summary:hover]:bg-ink/10 rounded-2xl px-6">
+                        <summary class="flex items-center justify-between gap-6 py-5">
+                            <h3 class="text-base sm:text-sm">{{ $item->question }}</h3>
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="faq-icon stroke-ink/40 size-6 shrink-0">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
+                            </svg>
+                        </summary>
+                        <p class="text-ink/60 max-w-[72ch] pb-6 text-base/7 text-pretty">{{ $item->answer }}</p>
+                    </details>
+                @endforeach
+            </div>
         </div>
     </section>
 
