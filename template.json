@@ -4,8 +4,8 @@
     "description": "A warm, serif-led studio landing page — an art-directed hero, numbered services, featured work, retainer pricing, an accordion FAQ, and a news section with full posts.",
     "icon": "\ud83d\udd8b\ufe0f",
     "repo": "https://github.com/site-templates/amber",
-    "order": 5,
-    "category": "landing-page",
+    "order": 2,
+    "category": "landing",
     "theme": "light",
     "accent": "#e05d38",
     "pages": [

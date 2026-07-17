@@ -1,0 +1,11 @@
+title: Navigation
+description: The site-wide top bar — appears on every page that uses the layout
+fields:
+    ctaText:
+        type: text
+        label: Button text
+        default: "Book a call"
+    ctaLink:
+        type: url
+        label: Button link
+        default: "mailto:studio@amber.example"

@@ -1,0 +1,28 @@
+title: Featured work
+description: The first four projects from collections/projects.json, with a link to the full work page
+fields:
+    badge:
+        type: text
+        label: Badge
+        default: "Selected work"
+    heading:
+        type: text
+        label: Heading
+        default: "Six launches, six"
+    headingAccent:
+        type: text
+        label: Heading accent
+        description: The softened word in the middle of the heading.
+        default: "new"
+    headingEnd:
+        type: text
+        label: Heading ending
+        default: "beginnings."
+    linkText:
+        type: text
+        label: Link text
+        default: "View all work"
+    linkUrl:
+        type: url
+        label: Link URL
+        default: "/work"

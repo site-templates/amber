@@ -1,0 +1,11 @@
+title: Work grid
+description: Every project from collections/projects.json — edit that file to change the cards
+fields:
+    columns:
+        type: select
+        label: Columns from the sm breakpoint
+        description: How many cards sit side by side on larger screens.
+        default: "sm:grid-cols-2"
+        options:
+            "sm:grid-cols-2": Two columns
+            "sm:grid-cols-2 lg:grid-cols-3": Three columns

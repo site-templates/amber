@@ -1,0 +1,24 @@
+title: Services
+description: What the studio does — the numbered service list comes from collections/services.json
+fields:
+    badge:
+        type: text
+        label: Badge
+        default: "What we do"
+    heading:
+        type: text
+        label: Heading
+        default: "We handle the"
+    headingAccent:
+        type: text
+        label: Heading accent
+        description: The softened word in the middle of the heading.
+        default: "whole"
+    headingEnd:
+        type: text
+        label: Heading ending
+        default: "launch."
+    intro:
+        type: textarea
+        label: Intro copy
+        default: "Strategy, brand, product, and the code to ship it — one team, one thread, no hand-offs."

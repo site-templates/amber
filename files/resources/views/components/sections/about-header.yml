@@ -1,0 +1,19 @@
+title: About header
+description: The about page opener — badge, headline, and two paragraphs of studio story
+fields:
+    badge:
+        type: text
+        label: Badge
+        default: "About"
+    heading:
+        type: text
+        label: Heading
+        default: "Design is a craft. We treat it like one."
+    bodyOne:
+        type: textarea
+        label: First paragraph
+        default: "We've spent thirteen years designing for startups — first inside them, now alongside them. In that time we've learned that great design isn't about taste alone; it's about momentum. Founders don't need a hundred options, they need the right one, shipped."
+    bodyTwo:
+        type: textarea
+        label: Second paragraph
+        default: "Amber is deliberately small. Four people, no account managers, no hand-offs, no telephone game. You talk to the people doing the work, and the work moves fast because of it."

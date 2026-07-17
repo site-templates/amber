@@ -1,0 +1,41 @@
+title: Footer
+description: The site-wide footer — the closing CTA, sitemap, and copyright line
+fields:
+    badge:
+        type: text
+        label: Badge
+        default: "Start a project"
+    heading:
+        type: text
+        label: CTA heading
+        default: "Your launch deserves"
+    headingAccent:
+        type: text
+        label: CTA heading accent
+        description: The softened words at the end of the heading.
+        default: "better design"
+    ctaLink:
+        type: url
+        label: CTA link
+        default: "mailto:studio@amber.example"
+    body:
+        type: textarea
+        label: CTA copy
+        default: "Tell us what you're building and when it needs to be live. We'll tell you honestly whether we're the right studio for it."
+    background:
+        type: image
+        label: CTA background
+        description: The image behind the closing CTA.
+        default: "https://assets.ui.sh/wallpapers/horizon.webp?variant=obsidian-ember"
+    logo:
+        type: image
+        label: Logo
+        default: "https://assets.ui.sh/marks/1.svg?text=Amber&font=inter&weight=500&letterSpacing=-0.5&color=%23e05d38&textColor=%23f7f5f0"
+    logoAlt:
+        type: text
+        label: Logo alt text
+        default: "Amber"
+    copyright:
+        type: text
+        label: Copyright line
+        default: "© 2026 Amber Studio. All rights reserved."

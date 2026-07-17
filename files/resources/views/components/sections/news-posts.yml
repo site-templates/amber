@@ -1,0 +1,8 @@
+title: News posts
+description: The full post index from collections/news.json — the newest post gets the wide treatment
+fields:
+    readMoreText:
+        type: text
+        label: Read-more link text
+        description: The link text on the featured (newest) post.
+        default: "Read the post"

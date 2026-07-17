@@ -1,0 +1,72 @@
+title: Why us
+description: The two-card comparison — most studios on the left, this studio on the right
+fields:
+    badge:
+        type: text
+        label: Badge
+        default: "Why us"
+    heading:
+        type: text
+        label: Heading
+        default: "We're not built like"
+    headingAccent:
+        type: text
+        label: Heading accent
+        description: The softened words at the end of the heading.
+        default: "most studios"
+    leftImage:
+        type: image
+        label: Left card image
+        default: "https://assets.ui.sh/wallpapers/silk.webp?variant=platinum-flow"
+    leftTag1:
+        type: text
+        label: Left card tag 1
+        default: "Discovery decks"
+    leftTag2:
+        type: text
+        label: Left card tag 2
+        default: "Account managers"
+    leftTag3:
+        type: text
+        label: Left card tag 3
+        default: "Quarterly timelines"
+    leftTag4:
+        type: text
+        label: Left card tag 4
+        default: "Screenshots, not code"
+    leftTitle:
+        type: text
+        label: Left card title
+        default: "Most studios"
+    leftBody:
+        type: textarea
+        label: Left card copy
+        default: "Sell you a process, bill you for the deck, and hand the file to someone who wasn't in the room."
+    rightImage:
+        type: image
+        label: Right card image
+        default: "https://assets.ui.sh/wallpapers/blend.webp?variant=golden-hour-mist"
+    rightTag1:
+        type: text
+        label: Right card tag 1
+        default: "Direction in week one"
+    rightTag2:
+        type: text
+        label: Right card tag 2
+        default: "Four people, no layers"
+    rightTag3:
+        type: text
+        label: Right card tag 3
+        default: "Live in six weeks"
+    rightTag4:
+        type: text
+        label: Right card tag 4
+        default: "Shipped in Tailwind"
+    rightTitle:
+        type: text
+        label: Right card title
+        default: "Amber"
+    rightBody:
+        type: textarea
+        label: Right card copy
+        default: "Show you a real direction in week one, then stay on the tools until it's live and earning."

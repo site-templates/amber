@@ -1,0 +1,15 @@
+title: News header
+description: The news page opener — badge, headline, and intro copy
+fields:
+    badge:
+        type: text
+        label: Badge
+        default: "News"
+    heading:
+        type: text
+        label: Heading
+        default: "Notes from the studio."
+    body:
+        type: textarea
+        label: Intro copy
+        default: "What we've learned shipping sixty-one launches — written down while it's still fresh, and free of the usual agency hedging."

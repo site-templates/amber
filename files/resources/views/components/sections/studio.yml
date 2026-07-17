@@ -1,0 +1,49 @@
+title: Who we are
+description: The studio introduction — heading, copy, and the three stats on the glass panel
+fields:
+    badge:
+        type: text
+        label: Badge
+        default: "Who we are"
+    heading:
+        type: text
+        label: Heading
+        default: "A studio built for"
+    headingAccent:
+        type: text
+        label: Heading accent
+        description: The softened word at the end of the heading.
+        default: "momentum"
+    body:
+        type: textarea
+        label: Supporting copy
+        default: "We're four people who would rather ship than pitch. No account managers, no hand-offs, no telephone game — you work directly with the designers making the thing, and the work moves fast because of it."
+    background:
+        type: image
+        label: Panel background
+        description: The image behind the stats panel.
+        default: "https://assets.ui.sh/wallpapers/horizon.webp?variant=jade-corner"
+    stat1Value:
+        type: text
+        label: Stat 1 value
+        default: "61"
+    stat1Label:
+        type: text
+        label: Stat 1 label
+        default: "Projects shipped since 2013"
+    stat2Value:
+        type: text
+        label: Stat 2 value
+        default: "6 wks"
+    stat2Label:
+        type: text
+        label: Stat 2 label
+        default: "Average brand to launch"
+    stat3Value:
+        type: text
+        label: Stat 3 value
+        default: "94%"
+    stat3Label:
+        type: text
+        label: Stat 3 label
+        default: "Clients who come back"

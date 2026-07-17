@@ -1,0 +1,37 @@
+title: Hero
+description: The opening statement — star rating, headline, supporting copy, two actions, and the showpiece image
+fields:
+    rating:
+        type: text
+        label: Rating line
+        description: The short proof line under the five stars.
+        default: "Helped over 50 founders launch"
+    heading:
+        type: text
+        label: Heading
+        default: "Build Your Brand"
+    body:
+        type: textarea
+        label: Supporting copy
+        default: "A four-person design studio for founders — brand, product, and web, from first sketch to shipped code."
+    primaryText:
+        type: text
+        label: Primary button text
+        default: "Book an intro call"
+    primaryLink:
+        type: url
+        label: Primary button link
+        default: "mailto:studio@amber.example"
+    secondaryText:
+        type: text
+        label: Secondary button text
+        default: "See the work"
+    secondaryLink:
+        type: url
+        label: Secondary button link
+        default: "/work"
+    image:
+        type: image
+        label: Showpiece image
+        description: The large image under the headline — the hero shader animates over it.
+        default: "https://assets.ui.sh/wallpapers/silk.webp?variant=molten-amber"

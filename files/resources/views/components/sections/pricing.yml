@@ -1,0 +1,104 @@
+title: Pricing
+description: The two ways to work together — the retainer and the single project
+fields:
+    badge:
+        type: text
+        label: Badge
+        default: "Ways to work together"
+    heading:
+        type: text
+        label: Heading
+        default: "One retainer. Or one"
+    headingAccent:
+        type: text
+        label: Heading accent
+        description: The softened word in the middle of the heading.
+        default: "great"
+    headingEnd:
+        type: text
+        label: Heading ending
+        default: "project."
+    planOneTitle:
+        type: text
+        label: Plan 1 title
+        default: "Design retainer"
+    planOneBadge:
+        type: text
+        label: Plan 1 badge
+        default: "Most popular"
+    planOneBody:
+        type: textarea
+        label: Plan 1 description
+        default: "A studio on tap — for teams that always have a next thing."
+    planOnePrice:
+        type: text
+        label: Plan 1 price
+        default: "$9,400"
+    planOneMeta:
+        type: text
+        label: Plan 1 price note
+        default: "/month"
+    planOneFeature1:
+        type: text
+        label: Plan 1 feature 1
+        default: "Unlimited requests, one at a time"
+    planOneFeature2:
+        type: text
+        label: Plan 1 feature 2
+        default: "Two-day average turnaround"
+    planOneFeature3:
+        type: text
+        label: Plan 1 feature 3
+        default: "Brand, product, and web — all included"
+    planOneFeature4:
+        type: text
+        label: Plan 1 feature 4
+        default: "Pause or cancel anytime"
+    planOneButtonText:
+        type: text
+        label: Plan 1 button text
+        default: "Start a retainer"
+    planOneButtonLink:
+        type: url
+        label: Plan 1 button link
+        default: "mailto:studio@amber.example"
+    planTwoTitle:
+        type: text
+        label: Plan 2 title
+        default: "Single project"
+    planTwoBody:
+        type: textarea
+        label: Plan 2 description
+        default: "A brand, a site, or a product — scoped, quoted, and shipped."
+    planTwoPrice:
+        type: text
+        label: Plan 2 price
+        default: "From $18k"
+    planTwoMeta:
+        type: text
+        label: Plan 2 price note
+        default: "fixed"
+    planTwoFeature1:
+        type: text
+        label: Plan 2 feature 1
+        default: "Four-to-six week engagements"
+    planTwoFeature2:
+        type: text
+        label: Plan 2 feature 2
+        default: "Strategy, design, and build"
+    planTwoFeature3:
+        type: text
+        label: Plan 2 feature 3
+        default: "Weekly progress reviews"
+    planTwoFeature4:
+        type: text
+        label: Plan 2 feature 4
+        default: "Full ownership of every file"
+    planTwoButtonText:
+        type: text
+        label: Plan 2 button text
+        default: "Request a quote"
+    planTwoButtonLink:
+        type: url
+        label: Plan 2 button link
+        default: "mailto:studio@amber.example"

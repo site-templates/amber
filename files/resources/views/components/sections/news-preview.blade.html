@@ -1,0 +1,38 @@
+@props([
+    'items',
+    'badge' => 'News',
+    'heading' => 'Notes from the',
+    'headingAccent' => 'studio',
+    'linkText' => 'Read all news',
+    'linkUrl' => '/news',
+])
+{{--
+    Loops over collections/news.json. Each post is a real page under
+    pages/news/{slug}.blade.html — the full index lives on pages/news.blade.html.
+--}}
+<section class="py-20 sm:py-28">
+    <div class="mx-auto max-w-6xl px-6">
+        <div class="flex flex-wrap items-end justify-between gap-4">
+            <div>
+                <p class="bg-ink/5 text-ink/70 inline-flex rounded-full px-3 py-1 text-sm sm:text-xs">{{ $badge }}</p>
+                <h2 class="font-display mt-6 max-w-[24ch] text-5xl tracking-tight text-balance sm:text-6xl">
+                    {{ $heading }} <span class="text-ink/35">{{ $headingAccent }}</span>.
+                </h2>
+            </div>
+            <a href="{{ $linkUrl }}" class="hover-line text-ink/60 hover:text-ink text-base sm:text-sm">{{ $linkText }} &rarr;</a>
+        </div>
+
+        <div class="mt-12 grid gap-6 sm:grid-cols-3" data-reveal-group>
+            @foreach ($items as $item)
+                <a href="{{ $item->link }}" class="group">
+                    <div class="relative aspect-16/10 overflow-hidden rounded-[min(2vw,24px)] outline-1 -outline-offset-1 outline-black/5">
+                        <img src="{{ $item->image }}" alt="{{ $item->alt }}" class="size-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                    </div>
+                    <p class="text-accent mt-5 text-sm">{{ $item->category }}<span class="text-ink/20 mx-2">/</span><span class="text-ink/40">{{ $item->dateFormatted }}</span></p>
+                    <h3 class="font-display mt-3 max-w-[24ch] text-3xl tracking-tight text-pretty">{{ $item->title }}</h3>
+                    <p class="text-ink/50 mt-3 text-base/7 text-pretty sm:text-sm/6">{{ $item->description }}</p>
+                </a>
+            @endforeach
+        </div>
+    </div>
+</section>

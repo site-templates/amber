@@ -1,0 +1,21 @@
+title: Testimonials
+description: The grid of client quotes from collections/testimonials.json (the featured one is skipped)
+fields:
+    badge:
+        type: text
+        label: Badge
+        default: "Client notes"
+    heading:
+        type: text
+        label: Heading
+        default: "The part we can't"
+    headingAccent:
+        type: text
+        label: Heading accent
+        description: The softened word at the end of the heading.
+        default: "design"
+    note:
+        type: text
+        label: Side note
+        description: The short line on the right of the heading.
+        default: "Sixty-one projects shipped since 2013"

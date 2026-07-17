@@ -1,0 +1,15 @@
+title: Work header
+description: The work page opener — badge, headline, and intro copy
+fields:
+    badge:
+        type: text
+        label: Badge
+        default: "Selected work"
+    heading:
+        type: text
+        label: Heading
+        default: "Six projects, six launches."
+    body:
+        type: textarea
+        label: Intro copy
+        default: "A sample of recent engagements. Each one shipped on schedule and is still earning its keep — ask us about the numbers on our first call."

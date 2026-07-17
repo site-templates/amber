@@ -1,0 +1,20 @@
+title: Studio timeline
+description: The studio story year by year — stops come from collections/timeline.json
+fields:
+    badge:
+        type: text
+        label: Badge
+        default: "The road here"
+    heading:
+        type: text
+        label: Heading
+        default: "Thirteen years, one"
+    headingAccent:
+        type: text
+        label: Heading accent
+        description: The softened word in the middle of the heading.
+        default: "habit"
+    headingEnd:
+        type: text
+        label: Heading ending
+        default: ": ship it."

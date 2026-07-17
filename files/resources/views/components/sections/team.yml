@@ -1,0 +1,24 @@
+title: Team
+description: The four specialists — cards come from collections/team.json
+fields:
+    badge:
+        type: text
+        label: Badge
+        default: "The team"
+    heading:
+        type: text
+        label: Heading
+        default: "You're in"
+    headingAccent:
+        type: text
+        label: Heading accent
+        description: The softened word in the middle of the heading.
+        default: "experienced"
+    headingEnd:
+        type: text
+        label: Heading ending
+        default: "hands."
+    intro:
+        type: textarea
+        label: Intro copy
+        default: "No layers of management. You work directly with the four specialists who understand your business and build the thing from start to finish."

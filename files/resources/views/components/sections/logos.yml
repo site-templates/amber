@@ -1,0 +1,55 @@
+title: Logo cloud
+description: The strip of client logos under the hero
+fields:
+    tagline:
+        type: text
+        label: Tagline
+        default: "Trusted by teams at"
+    logo1:
+        type: image
+        label: Logo 1
+        default: "https://assets.ui.sh/logos/align.svg?color=%231c1917"
+    logo1Alt:
+        type: text
+        label: Logo 1 alt text
+        default: "Align"
+    logo2:
+        type: image
+        label: Logo 2
+        default: "https://assets.ui.sh/logos/artifact.svg?color=%231c1917"
+    logo2Alt:
+        type: text
+        label: Logo 2 alt text
+        default: "Artifact"
+    logo3:
+        type: image
+        label: Logo 3
+        default: "https://assets.ui.sh/logos/axiom.svg?color=%231c1917"
+    logo3Alt:
+        type: text
+        label: Logo 3 alt text
+        default: "Axiom"
+    logo4:
+        type: image
+        label: Logo 4
+        default: "https://assets.ui.sh/logos/concise.svg?color=%231c1917"
+    logo4Alt:
+        type: text
+        label: Logo 4 alt text
+        default: "Concise"
+    logo5:
+        type: image
+        label: Logo 5
+        default: "https://assets.ui.sh/logos/looply.svg?color=%231c1917"
+    logo5Alt:
+        type: text
+        label: Logo 5 alt text
+        default: "Looply"
+    logo6:
+        type: image
+        label: Logo 6
+        default: "https://assets.ui.sh/logos/orbital.svg?color=%231c1917"
+    logo6Alt:
+        type: text
+        label: Logo 6 alt text
+        default: "Orbital"

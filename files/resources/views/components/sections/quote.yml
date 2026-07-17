@@ -1,0 +1,8 @@
+title: Featured quote
+description: The testimonial flagged as featured in collections/testimonials.json, over a full-bleed image
+fields:
+    background:
+        type: image
+        label: Background image
+        description: The image behind the featured quote.
+        default: "https://assets.ui.sh/wallpapers/horizon.webp?variant=sepia-rim"

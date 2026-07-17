@@ -1,0 +1,24 @@
+title: News preview
+description: The latest posts from collections/news.json, with a link to the full news page
+fields:
+    badge:
+        type: text
+        label: Badge
+        default: "News"
+    heading:
+        type: text
+        label: Heading
+        default: "Notes from the"
+    headingAccent:
+        type: text
+        label: Heading accent
+        description: The softened word at the end of the heading.
+        default: "studio"
+    linkText:
+        type: text
+        label: Link text
+        default: "Read all news"
+    linkUrl:
+        type: url
+        label: Link URL
+        default: "/news"

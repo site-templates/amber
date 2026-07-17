@@ -2,71 +2,9 @@
 <x-layouts.main title="News" description="Notes from the Amber studio on brand, product, and shipping design that earns its keep.">
 
     {{-- ============ Header ============ --}}
-    <section class="pt-16 pb-12 sm:pt-24">
-        <div class="mx-auto max-w-6xl px-6">
-            <div class="grid gap-6 lg:grid-cols-12">
-                <div class="lg:col-span-7" data-reveal>
-                    <p class="bg-ink/5 text-ink/70 inline-flex rounded-full px-3 py-1 text-sm sm:text-xs">News</p>
-                    <h1 class="font-display mt-6 max-w-[20ch] text-6xl tracking-tight text-balance sm:text-7xl">
-                        Notes from the studio.
-                    </h1>
-                </div>
-                <div class="lg:col-span-5 lg:pt-20" data-reveal>
-                    <p class="text-ink/60 max-w-[56ch] text-base/7 text-pretty">
-                        What we've learned shipping sixty-one launches — written down while
-                        it's still fresh, and free of the usual agency hedging.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <x-sections.news-header />
 
     {{-- ============ Posts ============ --}}
-    {{--
-        Loops over collections/news.json. Each post is a real page under
-        pages/news/{slug}.blade.html — add one there, then add its row here.
-    --}}
-    <section class="pb-20 sm:pb-28">
-        <div class="mx-auto max-w-6xl px-6">
-
-            {{-- The newest post gets the wide treatment --}}
-            @foreach ($news as $item)
-                <a href="{{ $item->link }}" class="group grid gap-6 lg:grid-cols-2 lg:items-center" data-reveal>
-                    <div class="relative aspect-16/10 overflow-hidden rounded-[min(2vw,24px)] outline-1 -outline-offset-1 outline-black/5">
-                        <img src="{{ $item->image }}" alt="{{ $item->alt }}" class="size-full object-cover transition-transform duration-500 group-hover:scale-105">
-                    </div>
-                    <div>
-                        <p class="text-accent text-sm">{{ $item->category }}<span class="text-ink/20 mx-2">/</span><span class="text-ink/40">{{ $item->dateFormatted }}</span></p>
-                        <h2 class="font-display mt-4 max-w-[24ch] text-4xl tracking-tight text-pretty sm:text-5xl">{{ $item->title }}</h2>
-                        <p class="text-ink/50 mt-4 max-w-[56ch] text-base/7 text-pretty">{{ $item->description }}</p>
-                        <p class="text-ink/70 group-hover:text-ink mt-6 inline-flex items-center gap-1.5 text-base sm:text-sm">
-                            Read the post
-                            <svg viewBox="0 0 16 16" class="fill-current size-4 h-lh shrink-0 transition-transform duration-200 group-hover:translate-x-0.5">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06Z"/>
-                            </svg>
-                        </p>
-                    </div>
-                </a>
-                @break($loop->iteration == 1)
-            @endforeach
-
-            {{-- The rest sit in a grid below --}}
-            <div class="mt-16 grid gap-6 sm:grid-cols-2">
-                @foreach ($news as $item)
-                    @if ($loop->iteration != 1)
-                        <a href="{{ $item->link }}" class="group" data-reveal>
-                            <div class="relative aspect-16/10 overflow-hidden rounded-[min(2vw,24px)] outline-1 -outline-offset-1 outline-black/5">
-                                <img src="{{ $item->image }}" alt="{{ $item->alt }}" class="size-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
-                            </div>
-                            <p class="text-accent mt-5 text-sm">{{ $item->category }}<span class="text-ink/20 mx-2">/</span><span class="text-ink/40">{{ $item->dateFormatted }}</span></p>
-                            <h2 class="font-display mt-3 max-w-[24ch] text-3xl tracking-tight text-pretty">{{ $item->title }}</h2>
-                            <p class="text-ink/50 mt-3 max-w-[56ch] text-base/7 text-pretty sm:text-sm/6">{{ $item->description }}</p>
-                        </a>
-                    @endif
-                @endforeach
-            </div>
-
-        </div>
-    </section>
+    <x-sections.news-posts :items="$news" />
 
 </x-layouts.main>

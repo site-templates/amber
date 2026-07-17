@@ -1,19 +1,29 @@
+@props([
+    'badge' => 'Start a project',
+    'heading' => 'Your launch deserves',
+    'headingAccent' => 'better design',
+    'ctaLink' => 'mailto:studio@amber.example',
+    'body' => 'Tell us what you\'re building and when it needs to be live. We\'ll tell you honestly whether we\'re the right studio for it.',
+    'background' => 'https://assets.ui.sh/wallpapers/horizon.webp?variant=obsidian-ember',
+    'logo' => 'https://assets.ui.sh/marks/1.svg?text=Amber&font=inter&weight=500&letterSpacing=-0.5&color=%23e05d38&textColor=%23f7f5f0',
+    'logoAlt' => 'Amber',
+    'copyright' => '© 2026 Amber Studio. All rights reserved.',
+])
 {{-- Global footer with the closing CTA. Rendered on every page by the layout. --}}
 <footer class="bg-ink text-canvas">
 
     {{-- The closing CTA, over the last of the site's art-directed images --}}
     <div class="relative isolate overflow-hidden">
-        <img src="https://assets.ui.sh/wallpapers/horizon.webp?variant=obsidian-ember" alt="" class="absolute inset-0 -z-10 size-full object-cover" loading="lazy">
+        <img src="{{ $background }}" alt="" class="absolute inset-0 -z-10 size-full object-cover" loading="lazy">
         <div class="from-ink via-ink/60 to-ink/75 absolute inset-0 -z-10 bg-linear-to-t" aria-hidden="true"></div>
 
         <div class="mx-auto max-w-6xl px-6 py-24 sm:py-32">
-            <p class="bg-canvas/10 text-canvas/70 inline-flex rounded-full px-3 py-1 text-sm sm:text-xs">Start a project</p>
-            <a href="mailto:studio@amber.example" class="hover:text-accent font-display mt-6 block max-w-[20ch] text-5xl tracking-tight text-balance sm:text-7xl">
-                Your launch deserves <span class="text-canvas/50">better design</span>.
+            <p class="bg-canvas/10 text-canvas/70 inline-flex rounded-full px-3 py-1 text-sm sm:text-xs">{{ $badge }}</p>
+            <a href="{{ $ctaLink }}" class="hover:text-accent font-display mt-6 block max-w-[20ch] text-5xl tracking-tight text-balance sm:text-7xl">
+                {{ $heading }} <span class="text-canvas/50">{{ $headingAccent }}</span>.
             </a>
             <p class="text-canvas/60 mt-8 max-w-[56ch] text-base/7 text-pretty">
-                Tell us what you're building and when it needs to be live. We'll tell you
-                honestly whether we're the right studio for it.
+                {{ $body }}
             </p>
         </div>
     </div>
@@ -61,9 +71,9 @@
 
         <div class="border-canvas/10 mt-16 flex flex-col gap-6 border-t pt-8 sm:flex-row sm:items-center sm:justify-between">
             <a href="/" aria-label="Homepage">
-                <img src="https://assets.ui.sh/marks/1.svg?text=Amber&font=inter&weight=500&letterSpacing=-0.5&color=%23e05d38&textColor=%23f7f5f0" alt="Amber" class="h-6">
+                <img src="{{ $logo }}" alt="{{ $logoAlt }}" class="h-6">
             </a>
-            <p class="text-canvas/40 text-base sm:text-sm">&copy; 2026 Amber Studio. All rights reserved.</p>
+            <p class="text-canvas/40 text-base sm:text-sm">{{ $copyright }}</p>
         </div>
     </div>
 
