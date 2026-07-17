@@ -4,7 +4,7 @@
 ])
 {{--
     Loops over collections/news.json. Each post is a real page under
-    pages/news/{slug}.blade.html — add one there, then add its row here.
+    pages/news/{slug}.blade.php — add one there, then add its row here.
 --}}
 <section class="pb-20 sm:pb-28">
     <div class="mx-auto max-w-6xl px-6">

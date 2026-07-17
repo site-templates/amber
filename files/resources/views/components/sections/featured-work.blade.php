@@ -9,7 +9,7 @@
 ])
 {{--
     Loops over collections/projects.json, showing the first 4 (see the break below).
-    The full grid lives on pages/work.blade.html.
+    The full grid lives on pages/work.blade.php.
 --}}
 <section class="py-20 sm:py-28">
     <div class="mx-auto max-w-6xl px-6">

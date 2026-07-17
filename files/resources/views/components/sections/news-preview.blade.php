@@ -8,7 +8,7 @@
 ])
 {{--
     Loops over collections/news.json. Each post is a real page under
-    pages/news/{slug}.blade.html — the full index lives on pages/news.blade.html.
+    pages/news/{slug}.blade.php — the full index lives on pages/news.blade.php.
 --}}
 <section class="py-20 sm:py-28">
     <div class="mx-auto max-w-6xl px-6">
