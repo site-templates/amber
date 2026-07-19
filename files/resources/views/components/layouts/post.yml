@@ -1,0 +1,34 @@
+# Field labels for the post layout's chrome. Each news post passes these as
+# attributes on its x-layouts.post tag; the body itself is authored markup.
+title: Post layout
+description: The shared chrome around a news post — back link, meta, title, and the lead image
+fields:
+    title:
+        type: text
+        label: Title
+        default: ""
+    description:
+        type: textarea
+        label: Summary
+        description: Shown under the title and used as the meta description.
+        default: ""
+    category:
+        type: text
+        label: Category
+        default: ""
+    date:
+        type: text
+        label: Date
+        default: ""
+    readTime:
+        type: text
+        label: Read time
+        default: ""
+    image:
+        type: image
+        label: Lead image
+        default: ""
+    imageAlt:
+        type: text
+        label: Lead image alt text
+        default: ""

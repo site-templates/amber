@@ -1,0 +1,14 @@
+# Field labels for the site-wide layout chrome. Each page passes these as
+# attributes on its x-layouts.main tag; they fill the <title> and meta tags.
+title: Main layout
+description: The shared page shell — the browser title and the meta description
+fields:
+    title:
+        type: text
+        label: Page title
+        description: Shown in the browser tab as "{title} — Amber" and in link previews.
+        default: "Amber"
+    description:
+        type: textarea
+        label: Meta description
+        default: ""

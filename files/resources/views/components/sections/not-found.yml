@@ -1,0 +1,31 @@
+title: Not found
+description: The 404 message — badge, headline, and two ways back
+fields:
+    badge:
+        type: text
+        label: Badge
+        default: "404"
+    heading:
+        type: text
+        label: Heading
+        default: "This page missed the brief"
+    body:
+        type: textarea
+        label: Supporting copy
+        default: "Whatever lived at this address has been moved, renamed, or never made it past the first sketch. The studio, the work, and the news are all where you left them."
+    primaryText:
+        type: text
+        label: Primary button text
+        default: "Back to the homepage"
+    primaryLink:
+        type: url
+        label: Primary button link
+        default: "/"
+    secondaryText:
+        type: text
+        label: Secondary button text
+        default: "See the work"
+    secondaryLink:
+        type: url
+        label: Secondary button link
+        default: "/work"
