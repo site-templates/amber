@@ -8,6 +8,10 @@
     "category": "landing",
     "theme": "light",
     "accent": "#e05d38",
+    "themeable": true,
+    "palette": "ember",
+    "fonts": "geist-halant",
+    "appearance": "light",
     "pages": [
         "Home",
         "Work",

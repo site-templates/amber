@@ -1,6 +1,6 @@
 @props(['title' => 'Amber', 'description' => ''])
 <!doctype html>
-<html lang="en">
+<html lang="en" class="{{ $site->theme->appearance_class ?? '' }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,13 +23,13 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Halant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="{{ $site->theme->fonts_url ?? 'https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Halant:wght@300;400;500;600;700&display=swap' }}" rel="stylesheet">
 
     <!-- Lenis powers the weighted, eased scrolling — see public/js/main.js -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.css">
 
-    <!-- The line below loads Tailwind and inlines your resources/css/site.css -->
-    @vite('resources/css/site.css')
+    <!-- The line below loads Tailwind and inlines the theme tokens plus your resources/css/site.css -->
+    @vite(['resources/css/theme.css', 'resources/css/site.css'])
 </head>
 <body class="bg-canvas text-ink flex min-h-dvh flex-col font-sans antialiased">
 

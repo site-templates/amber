@@ -1,23 +1,19 @@
 /*
-    Amber — design tokens, prose, motion, and utilities.
+    Amber — prose, motion, and utilities.
 
     This file is inlined after Tailwind, so it can use @theme, @utility and @variant.
+    Colors and fonts live in resources/css/theme.css (the semantic theme
+    tokens — edited from the builder's Theme panel); amber's classic names
+    below alias onto them, so change the theme and the entire site follows.
     Web fonts are loaded with a <link> tag in the layout head instead of from here.
-
-    The whole template is driven by the four colors and two fonts below —
-    change --color-accent and the entire site follows.
 */
 
 @theme {
-    /* Halant for display, Geist for everything else. */
-    --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
-    --font-display: "Halant", ui-serif, Georgia, serif;
-
-    /* The palette. Warm cream page, near-black ink, one persimmon accent. */
-    --color-canvas: #f7f5f0;
-    --color-surface: #fffdfa;
-    --color-ink: #1c1917;
-    --color-accent: #e05d38;
+    /* The palette, aliased onto the semantic theme tokens. */
+    --color-canvas: var(--background);
+    --color-surface: var(--card);
+    --color-ink: var(--foreground);
+    --color-accent: var(--primary);
 
     /* One radius for every large card, panel, and image on the site. */
     --radius-card: var(--radius-3xl);

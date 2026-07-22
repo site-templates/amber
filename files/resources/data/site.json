@@ -1,0 +1,10 @@
+{
+    "name": "Amber",
+    "theme": {
+        "palette": "ember",
+        "fonts": "geist-halant",
+        "fonts_url": "https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Halant:wght@400;500;600&display=swap",
+        "appearance": "light",
+        "appearance_class": ""
+    }
+}
