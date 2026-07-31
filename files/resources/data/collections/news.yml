@@ -1,0 +1,16 @@
+# Column types for news.json — the source of truth the builder
+# reads: richtext columns open in the rich editor (Content drawer
+# and any section repeater listing this collection).
+fields:
+    order: { type: text }
+    title: { type: text }
+    description: { type: textarea }
+    category: { type: text }
+    date: { type: text }
+    dateFormatted: { type: text }
+    readTime: { type: text }
+    link: { type: url }
+    image: { type: image }
+    alt: { type: text }
+    slug: { type: text }
+    content: { type: richtext }
