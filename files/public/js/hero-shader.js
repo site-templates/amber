@@ -11,21 +11,37 @@
     in the markup underneath, so a visitor without JavaScript or WebGL — or one
     who asked for reduced motion — sees the page exactly as designed. The canvas
     only fades in after the first frame has actually rendered.
+
+    Pages change in place (instant navigation swaps <main>): heroMeshShader(root)
+    tears down the scene it drew for the previous page — the frame loop, the
+    observers, the WebGL context — before drawing into the hero of the next.
 */
 
 const shaderReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-document.addEventListener('DOMContentLoaded', function () {
-    heroMeshShader();
-});
+// The scene currently drawing, with the function that dismantles it.
+let heroMesh = null;
 
-window.heroMeshShader = function () {
-    const host = document.querySelector('[data-hero-shader]');
+window.heroMeshShader = function (root) {
+    if (heroMesh) {
+        heroMesh.destroy();
+        heroMesh = null;
+    }
+
+    root = root || document;
+
+    const host = root.querySelector('[data-hero-shader]');
 
     // The still image underneath is the fallback — no image, no shader.
     if (!host || !host.querySelector('img') || shaderReducedMotion.matches) {
         return;
     }
+
+    // A page restored from memory may still carry the canvas of an earlier
+    // visit — a dead one, with no context. It goes before a fresh one is drawn.
+    host.querySelectorAll(':scope > canvas').forEach(function (stale) {
+        stale.remove();
+    });
 
     /*
         The mesh is six color sources orbiting through the frame, blended by
@@ -260,7 +276,7 @@ window.heroMeshShader = function () {
         };
     }
 
-    host.addEventListener('pointermove', function (event) {
+    function onPointerMove(event) {
         cursor = pointerPosition(event);
         hover = 1;
 
@@ -292,12 +308,15 @@ window.heroMeshShader = function () {
             dy = cursor.y - lastStamp.y;
             distance = Math.hypot(dx, dy);
         }
-    });
+    }
 
-    host.addEventListener('pointerleave', function () {
+    function onPointerLeave() {
         hover = 0;
         lastStamp = null;
-    });
+    }
+
+    host.addEventListener('pointermove', onPointerMove);
+    host.addEventListener('pointerleave', onPointerLeave);
 
     function resize() {
         // The mesh is all low frequencies — it can render below CSS
@@ -312,7 +331,9 @@ window.heroMeshShader = function () {
     }
 
     resize();
-    new ResizeObserver(resize).observe(host);
+
+    const resizeObserver = new ResizeObserver(resize);
+    resizeObserver.observe(host);
 
     let raf = null;
     let previous = 0;
@@ -371,22 +392,55 @@ window.heroMeshShader = function () {
 
     // No point drawing colors nobody can see — the loop parks while the hero
     // is scrolled away and picks its clock back up on return.
-    new IntersectionObserver(function (entries) {
+    const visibility = new IntersectionObserver(function (entries) {
         entries[0].isIntersecting ? start() : stop();
-    }).observe(host);
+    });
+
+    visibility.observe(host);
 
     // If the GPU takes the context away, hand back to the still image.
-    canvas.addEventListener('webglcontextlost', function (event) {
+    function onContextLost(event) {
         event.preventDefault();
         stop();
         canvas.classList.remove('is-running');
-    });
+    }
+
+    canvas.addEventListener('webglcontextlost', onContextLost);
 
     // A visitor who turns motion off mid-session gets the still image back.
-    shaderReducedMotion.addEventListener('change', function (event) {
+    function onMotionChange(event) {
         if (event.matches) {
             stop();
             canvas.classList.remove('is-running');
         }
-    });
+    }
+
+    shaderReducedMotion.addEventListener('change', onMotionChange);
+
+    // Everything above, undone: for the page this hero belonged to leaving.
+    heroMesh = {
+        destroy: function () {
+            stop();
+            visibility.disconnect();
+            resizeObserver.disconnect();
+            host.removeEventListener('pointermove', onPointerMove);
+            host.removeEventListener('pointerleave', onPointerLeave);
+            canvas.removeEventListener('webglcontextlost', onContextLost);
+            shaderReducedMotion.removeEventListener('change', onMotionChange);
+
+            const lose = gl.getExtension('WEBGL_lose_context');
+
+            if (lose) {
+                lose.loseContext();
+            }
+
+            canvas.remove();
+        },
+    };
 };
+
+heroMeshShader(document);
+
+document.addEventListener('instant:navigated', function (event) {
+    heroMeshShader(event.detail.main);
+});

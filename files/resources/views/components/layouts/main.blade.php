@@ -31,7 +31,7 @@
     <!-- The line below loads Tailwind and inlines the theme tokens plus your resources/css/site.css -->
     @vite(['resources/css/theme.css', 'resources/css/site.css'])
 </head>
-<body class="bg-canvas text-ink flex min-h-dvh flex-col font-sans antialiased">
+<body class="bg-canvas text-ink flex min-h-dvh flex-col font-sans antialiased" data-instant-navigation>
 
     <x-nav/>
 
